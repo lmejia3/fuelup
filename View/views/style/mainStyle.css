@@ -80,3 +80,22 @@ form {
 .my-bg-dark{
     background: #2e2e30;
 }
+
+@-webkit-keyframes autofill {
+    to {
+        color: white;
+        background-color: #2e2e30;
+    }
+}
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px #2e2e30 inset;
+    -webkit-text-fill-color: white;
+}
+input:-webkit-autofill:hover {
+    -webkit-box-shadow: 0 0 0 50px #252527 inset;
+    -webkit-text-fill-color: white;
+}
