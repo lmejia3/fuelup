@@ -1,21 +1,24 @@
-<div class="container">
-        <form class="form-horizontal" id="form_login">
-            <h2 class="text-light">Logo goes here</h2>
-            <div class="form-group row justify-content-center">
-                <div class="col-9 ">
-                    <input type="text" id="email" class="form-control" placeholder="email" name="email">
-                </div>
+<div class="container" ng-controller="signInCtrl">
+    <form class="form-horizontal" id="form_login">
+        <h2 class="text-light">Login!</h2>
+        <div class="form-group row justify-content-center">
+            <div class="col-9 ">
+                <input type="text" id="email" class="form-control" placeholder="email" name="email" ng-model="user">
             </div>
-            <div class="form-group row justify-content-center">
-                <div class="col-9 ">
-                    <input type="password" id="pass" class="form-control" placeholder="password" name="pass">
-                </div>
+        </div>
+        <div class="form-group row justify-content-center">
+            <div class="col-9 ">
+                <input type="password" id="pass" class="form-control" placeholder="password" name="pass">
             </div>
+        </div>
+        <div class="form-group row justify-content-center">
             <div class="form-group row justify-content-center">
-                <div class="form-group row justify-content-center">
-                    <button type="submit" class="btn btn-primary col-6">Log in</button>
-                    <button type="button" class="btn btn-link col-12">Forgot Password?</button>
-                    <button type="button" class="btn btn-link col-12" onclick="window.location.href= '#!register';">Sign up</button>
-                </div>
-        </form>
-    </div>
+                <button type="submit" class="btn btn-primary col-6" ng-click="verifyUsername()">Log in</button>
+                <button type="button" class="btn btn-link col-12" onclick="window.location.href= '#!getpass';">Forgot
+                    Password?</button>
+                <button type="button" class="btn btn-link col-12" onclick="window.location.href= '#!register';">Sign
+                    up</button>
+            </div>
+    </form>
+    <div></div>
+</div>

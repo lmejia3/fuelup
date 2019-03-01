@@ -1,3 +1,10 @@
+html{
+    height: 100%;
+}
+body{
+    height:100%;
+}
+
 .my-pill:hover {
     color: green;
 }
@@ -99,3 +106,25 @@ input:-webkit-autofill:hover {
     -webkit-box-shadow: 0 0 0 50px #252527 inset;
     -webkit-text-fill-color: white;
 }
+
+.my-user-sidebar{
+    padding: 10px;
+    background-color: rgb(80, 80, 80);
+    color: white;
+}
+
+.my-user-content{
+    padding: 20px 25px;
+    background-color: rgb(143, 143, 143);
+    color: white;
+}
+
+.my-div-marg{
+    margin-bottom: 15px;
+}
+
+.container-fluid{
+    height: 100%;
+    overflow: hidden;
+}
+
