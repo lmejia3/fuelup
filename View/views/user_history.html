@@ -1,14 +1,36 @@
 <div class="container-fluid h-100">
     <div class="row h-100">
-        <div class="my-user-sidebar col-2">
+        <div class="my-user-sidebar col-1">
             <div class="my-div-marg"><a href="#!user" class="text-white">Main Page</a></div>
             <div class="my-div-marg"><a href="#!user/profile" class="text-white">My Profile</a></div>
             <div class="my-div-marg"><a class="text-warning">My History</a></div>
             <div class="my-div-marg"><a href="#!user/quote" class="text-white">Get Quote</a></div>
             <div class="my-div-marg"><a href="#!user/invoices" class="text-white">View Invoices</a></div>
         </div>
-        <div class="my-user-content col-10">
-            User My History Page
+        <div class="my-user-content col-11">
+            <div class="container" style="margin: 0px;" ng-controller="clientCtrl">
+                    <h2 class="text-black" style="padding-left: 12px">Request Quote</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Quote Date</th>
+                                <th>Delivery Date</th>
+                                <th>Amount In Gallons</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="quote in model">
+                                <td>{{quote.rdate}}</td>
+                                <td>{{quote.ddate}}</td>
+                                <td>{{quote.gallons}}</td>
+                                <td>{{quote.price | currency:"$"}}</td>
+                                <td>{{quote.paid}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
         </div>
     </div>
 </div>

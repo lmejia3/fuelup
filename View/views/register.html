@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container" ng-controller="signInCtrl">
     <form class="form-horizontal" id="form_login">
         <h2 class="text-light">Register for free!</h2>
         <div class="form-group row justify-content-center">
             <div class="col-9 ">
-                <input type="text" id="email" class="form-control" placeholder="email" name="email">
+                <input type="text" id="email" class="form-control" placeholder="email" name="email" ng-model="user">
             </div>
         </div>
         <div class="form-group row justify-content-center">
@@ -19,7 +19,7 @@
         </div>
         <div class="form-group row justify-content-center">
             <div class="form-group row justify-content-center">
-                <button type="submit" class="btn btn-primary col-6" onclick="window.location.href= '#!user';">Sign Up</button>
+                <button type="submit" class="btn btn-primary col-6" ng-click="verifyUsername()">Sign Up</button>
                 <button type="button" class="btn btn-link col-12" onclick="window.location.href= '#!login';">Already
                     Registered?</button>
             </div>

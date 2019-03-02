@@ -26,6 +26,12 @@ body{
     width: 400px;
 }
 
+.my-form-label {
+    color:black;
+    font-size: 12px;
+    border: hidden;
+}
+
 form {
     background-color:#38393b;
 }
@@ -35,8 +41,6 @@ form {
     font-size: 12px;
     border: hidden;
     background-color:#2e2e30;
-    color: white;
-    color: #FFF;
 }
 .form-control:hover{
     color:white;
@@ -50,14 +54,28 @@ form {
 .form-control::placeholder .form-control:-ms-input-placeholder {
     color: rgb(172, 169, 169);
 }
+
+.my-form-user {
+    color: black;
+    font-size: 12px;
+    border: hidden;
+    background-color: rgb(179, 179, 179);
+}
+
+
+
+.my-form-profile{
+    margin: 0px;
+    margin-top: 0px;
+    width: 600px;
+}
+
 .btn-primary{
-    width: 100px;
+    width: 50%;
     color:white;
     font-size: 12px;
     border: hidden;
     background-color:#2e2e30;
-    color: white;
-    color: #FFF;
 }
 .btn-primary:hover{
     background-color: #252527;
@@ -66,13 +84,16 @@ form {
     background-color: gray;
 }
 
+.my-form-submit{
+    color:black;
+    background-color: rgb(179, 179, 179);
+}
+
 .btn-link{
     width: 100px;
     color:white;
     font-size: 12px;
     border: hidden;
-    color: white;
-    color: #FFF;
 }
 
 
@@ -87,6 +108,26 @@ form {
 .my-bg-dark{
     background: #2e2e30;
 }
+
+@-webkit-keyframes autofill2 {
+    to {
+        color: black;
+        background-color: rgb(179, 179, 179);;
+    }
+}
+.my-form-user:-webkit-autofill {
+    -webkit-animation-name: autofill2;
+    -webkit-animation-fill-mode: both;
+}
+.my-form-user:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px #2e2e30 inset;
+    -webkit-text-fill-color: white;
+}
+.my-form-user:-webkit-autofill:hover {
+    -webkit-box-shadow: 0 0 0 50px #252527 inset;
+    -webkit-text-fill-color: white;
+}
+
 
 @-webkit-keyframes autofill {
     to {
@@ -107,6 +148,7 @@ input:-webkit-autofill:hover {
     -webkit-text-fill-color: white;
 }
 
+
 .my-user-sidebar{
     padding: 10px;
     background-color: rgb(80, 80, 80);
@@ -115,8 +157,8 @@ input:-webkit-autofill:hover {
 
 .my-user-content{
     padding: 20px 25px;
-    background-color: rgb(143, 143, 143);
-    color: white;
+    background-color: white;
+    color: black;
 }
 
 .my-div-marg{
@@ -126,5 +168,9 @@ input:-webkit-autofill:hover {
 .container-fluid{
     height: 100%;
     overflow: hidden;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover{
+    background-color: rgb(80, 80, 80);
 }
 
