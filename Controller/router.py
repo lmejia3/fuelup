@@ -1,5 +1,5 @@
 from flask import Flask, request
-from Modules import ViewController as vc
+from Modules.ViewConnector import ViewConnector as vc
 app = Flask(__name__)
 
 """
@@ -14,9 +14,7 @@ def dosmth():
 
 @app.route('/function/login')
 def login_route():
-    result = vc.validateRequest(request)
-    return result;
-    #return 'connected to registerUser'
+    return 'connected to registerUser'
 
 @app.route('/function/registerUser')
 def registerUser_route():
