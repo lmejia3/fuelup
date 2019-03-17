@@ -14,7 +14,7 @@ def dosmth():
 
 @app.route('/function/login')
 def login_route():
-    return 'connected to registerUser'
+    return 'connected to login'
 
 @app.route('/function/registerUser')
 def registerUser_route():
