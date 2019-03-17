@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3044892f-a975-4129-bf13-f56db87c1997" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Modules/UserAuthenticator/Tracker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/DatabaseConnector.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Pricing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/UserAuthenticator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/UserRegistrator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/ViewController.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
-    </list>
+    <list default="true" id="3044892f-a975-4129-bf13-f56db87c1997" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/Modules/Main/Main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="61">
-              <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
               <folding>
                 <marker date="1552813076772" expanded="true" signature="328:333" ph="..." />
                 <marker date="1552813076772" expanded="true" signature="381:386" ph="..." />
@@ -435,7 +424,7 @@
     <entry file="file://$PROJECT_DIR$/Modules/Main/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61">
-          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
           <folding>
             <marker date="1552813076772" expanded="true" signature="328:333" ph="..." />
             <marker date="1552813076772" expanded="true" signature="381:386" ph="..." />
