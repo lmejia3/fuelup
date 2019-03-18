@@ -1,6 +1,8 @@
 from flask import Flask, request
+from flask_cors import CORS, cross_origin
 from Modules.ViewConnector import ViewConnector as vc
 app = Flask(__name__)
+CORS(app)
 
 """
 in the router module, we simply forward the coming requests to the python application.
@@ -12,8 +14,9 @@ the format of the request is appropriate, and only then, call the requested func
 def dosmth():
         return 'successfully received the request'
 
-@app.route('/function/login')
+@app.route('/function/login', methods = ['POST'])
 def login_route():
+    print(request.method)
     return 'connected to login'
 
 @app.route('/function/registerUser')
