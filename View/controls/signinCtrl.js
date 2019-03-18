@@ -1,7 +1,7 @@
 angular.module("yoFeul")
-    .controller("signInCtrl", function ($scope) {
+    .controller("signInCtrl", function ($scope, $http) {
         $scope.user;
-        $scope.user;
+        $scope.pass;
 
         $scope.verifyUsername = function () {
 
@@ -10,6 +10,7 @@ angular.module("yoFeul")
                 url: 'http://18.216.110.220:20000/function/login',
                 params: {username: $scope.user, password: $scope.pass}
             }
+
             $http(req).then(
                 function(response){
                     console.log(response);
@@ -28,6 +29,6 @@ angular.module("yoFeul")
             } else {
                 window.location = '#!login'
             }
-            console.log($scope.$parent.username)
+            console.log($scope.$parent.username);
         }
     });
