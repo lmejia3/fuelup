@@ -7,7 +7,7 @@ angular.module("yoFeul")
 
             var req = {
                 method: 'GET',
-                url: 'http://18.216.110.220:20000/function/login',
+                url: 'https://18.216.110.220:20000/function/login',
                 params: {username: $scope.user, password: $scope.pass}
             }
 
