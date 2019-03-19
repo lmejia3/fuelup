@@ -14,9 +14,10 @@ the format of the request is appropriate, and only then, call the requested func
 def dosmth():
         return 'successfully received the request'
 
-@app.route('/function/login', methods = ['POST'])
+@app.route('/function/login', methods=['POST'])
 def login_route():
-    print(request.method)
+    content = request.get_json()
+    print(content['username'])
     return 'connected to login'
 
 @app.route('/function/registerUser')

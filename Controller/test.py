@@ -136,10 +136,11 @@ def parseFile(file_name):
 default_file = 'test_testcase.txt'
 details = False
 if(len(sys.argv) == 2):
-    default_file = sys.args[1]
-elif(len(sys.argv == 3)):
-    default_file = sys.args[1]
-    details = bool(sys.argv[2])
+    default_file = sys.argv[1]
+elif(len(sys.argv) == 3):
+    default_file = sys.argv[1]
+    if(sys.argv[2] == 'True'):
+    	details = bool(sys.argv[2])
 parseFile(default_file)
 
 
