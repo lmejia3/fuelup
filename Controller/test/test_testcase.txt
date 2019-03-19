@@ -1,0 +1,27 @@
+# this is a test case to test the unit testing module
+# refrence:
+# # is comment
+# @function_name redirects the test to the function
+# > is test input
+# < is expected output
+# for input or output we follow this format:
+# >int(25) means we input the integer 25
+# >int(25),string(lmao) means we are passing 2 parameters
+# for user defined classes, we use the following format:
+# >class_name(value1,value2,value3,...) creates a class that is the class name with given parameres as_
+# _constructor parameters, and passing it to the function. make use the class type is supported befor using it.
+#
+# look at the example below:
+# passwordIsValid takes 1 argument and login takes one user argument, but only needs the user and pass from the user
+# supported types: int, float, bool, string, user
+#
+
+@UserRegistrator.passwordIsValid
+>string(password)
+>string(V$ryComplicatedPa$$w@rd23)
+<bool(False)
+<bool(True)
+
+@Main.login
+>user(username,password,,,)
+<bool(False)

@@ -19,6 +19,9 @@ def processOrder(user, order):
 def getQuote(form):
     return 0.0
 
+def setUser(user):
+    return False
+
 def unregisterUser(user):
     return False
 

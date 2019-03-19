@@ -3,31 +3,31 @@ angular.module("yoFeul")
         $scope.user;
         $scope.pass;
 
+
         $scope.verifyUsername = function () {
 
             var req = {
-                method: 'GET',
-                url: 'https://18.216.110.220:20000/function/login',
-                params: {username: $scope.user, password: $scope.pass}
-            }
-
+                method: 'POST',
+                dataType: 'json',
+                url: 'http://18.216.110.220:20000/function/login',
+                data: {'username': $scope.user, 'password': $scope.pass},
+            };
             $http(req).then(
                 function(response){
+                    console.log('successful responce');
                     console.log(response);
-                    console.log('request successful');
                 },
                 function (response){
+                    console.log('failed responce');
                     console.log(response);
-                    console.log('request failed');
                 }
             );
 
-
             if ($scope.user) {
                 $scope.$parent.setUsername($scope.user);
-                window.location = '#!user/profile'
+                window.location = '#!user/profile';
             } else {
-                window.location = '#!login'
+                window.location = '#!login';
             }
             console.log($scope.$parent.username);
         }
