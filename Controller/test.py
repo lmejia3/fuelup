@@ -19,7 +19,7 @@ methods = {'ViewConnector.validateRequest': vc.validateRequest, 'ViewConnector.p
            'Main.getTransactionHistory': mn.getTransactionHistory, 'Main.getAllTransactionHistory': mn.getAllTransactionHistory, 'Main.getInvoices': mn.getInvoices,\
            'Main.getCurrentEvent': mn.getCurrentEvent, 'Main.getRequestList': mn.getRequestList, 'Main.getTrends': mn.getTrends, 'Main.getAllUsers': mn.getAllUsers,\
            'Main.getUsersOfType': mn.getUsersOfType, 'Main.getProfitMargin': mn.getProfitMargin, 'Main.setProfitMargin': mn.setProfitMargin}
-validCommands = ['@','<','>']
+validCommands = ['@','<','>','~']
 details = False
 
 
@@ -73,12 +73,17 @@ def parseFile(file_name):
             if(line[len(line)-1] == '\n'):
                 line = line[:-1]
 
-            if(command == '@'):
+            if(command == '~'):
+                print(line)
+            elif(command == '@'):
                 if(not started):
                     started = True
                 else:
                     if(details):
-                        print('score: ' + str(int(score/(counter-1)*100)) + '%' + ' or ' + str(score) + '/' + str(counter-1))
+                        if(counter-1 != 0):
+                            print('score: ' + str(int(score/(counter-1)*100)) + '%' + ' or ' + str(score) + '/' + str(counter-1))
+                        else:
+                            print('score: 0/0, no entries')
                     else:
                         print(str(score) + '/' + str(counter-1))
                 fname = line
@@ -97,39 +102,41 @@ def parseFile(file_name):
                     if(p.find('),') != -1):
                         sp = p.split('),')
                         param = sp[0]
-                        var = param.split(',')
-
+                        var = param.split('+')
                         calls.append(getVariable(type,var))
                         type = sp[1]
                     elif(p.find(')') != -1):
                         param = p[0:len(p)-1]
-                        var = param.split(',')
-
+                        var = param.split('+')
                         calls.append(getVariable(type, var))
 
-                    if(command == '>'):
-                        inputs.append(line)
-                        start_time = datetime.datetime.now()
-                        results.append([Invoke(fname, calls), 0])
-                        results[-1][1] = (datetime.datetime.now() - start_time).microseconds
-                    elif(command == '<'):
-                        status = 'Failed'
-                        out = results.pop()
-                        if(calls[0] == out[0]):
-                            status = 'Passed'
-                            score += 1
-                        if(not details):
-                            print(str(counter) + ": " + str(status))
+                if(command == '>'):
+                    inputs.append(line)
+                    start_time = datetime.datetime.now()
+                    results.append([Invoke(fname, calls), 0])
+                    results[-1][1] = (datetime.datetime.now() - start_time).microseconds
+                elif(command == '<'):
+                    status = 'Failed'
+                    out = results.pop()
+                    if(calls[0] == out[0]):
+                        status = 'Passed'
+                        score += 1
+                    if(not details):
+                        print(str(counter) + ": " + str(status))
 
-                        else:
-                            print()
-                            print('***** Test Case '+str(counter)+' *****')
-                            print('input: ' + inputs[counter-1])
-                            print('output: ' + str(out[0]) + '   expected: ' + str(calls[0]) + '   status: ' + status + '   execution time: ' + str(out[1]) + ' microseconds')
-                            print('*****')
-                        counter += 1
+                    else:
+                        print()
+                        print('***** Test Case '+str(counter)+' *****')
+                        print('input: ' + inputs[counter-1])
+                        print('output: ' + str(out[0]) + '   expected: ' + str(calls[0]) + '   status: ' + status + '   execution time: ' + str(out[1]) + ' microseconds')
+                        print('*****')
+                    counter += 1
         if(details):
-            print('score: ' + str(int(score / (counter - 1) * 100)) + '%' + ' or ' + str(score) + '/' + str(counter - 1))
+            if (counter - 1 != 0):
+                print('score: ' + str(int(score / (counter - 1) * 100)) + '%' + ' or ' + str(score) + '/' + str(
+                    counter - 1))
+            else:
+                print('score: 0/0, no entries')
         else:
             print(str(score) + '/' + str(counter - 1))
 

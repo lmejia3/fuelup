@@ -1,0 +1,225 @@
+# how to use: make sure you are in the same directory as test.py, then run the command:
+# python3 test.py testcase.txt      or      python3 test.py testcase.txt True
+
+@ViewConnector.validateRequest
+~refactoring: the input will be request, and we can obtain the input string as req.data
+>string({"username": "bullshit@fuck.com", "password": "allahoakbar"})
+>string({"username": , "password": "allahoakbar"})
+>string({"username": "bullshit@fuck.com", "password": "allahoakbar", "key": "123"})
+>string({"username": "bullshit@fuck.com", "password": "allahoakbar", "key": "123asd123", "a":"a"})
+>string({"gallons": 123, "date": "allahoakbar", "address": "12345 Kharej Street", "State": "TX"})
+>string({"form": "bullshit@fuck.com""hp@hp.com", "password": "allahoakbar", "key": "123"})
+>string({"username": "bullshit@fuck.com", "password": "allahoakbar", "user_key": "123"})
+>string({"username": "bullshit@fuck.com", "password": "allahoakbar"})
+>string({"invoices": {"element1": 1}, "password": "allahoakbar", "key": "123"})
+>string({"username": "bullshit@fuck.com", "password": "allahoakbar", "key": "123"})
+>string("username": bullshit@fuck.com", "password": "allahoakbar", "key": "123")
+>string({"invoices": {}, "password": "allahoakbar", "key": "123"})
+<bool(False)
+<bool(False)
+<bool(True)
+<bool(True)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(True)
+<bool(True)
+<bool(False)
+<bool(True)
+
+@ViewConnector.parseRequestData
+~does not require testing. will work if @validateRequest is properly working\
+
+@UserAuthenticator.userIsValid
+~refactoring: input as dict
+>string({"username": "user001@test.com", "password": "pass001"})
+>string({"username": "user002@test.com", "password": "pass001"})
+>string({"username": "user003@test.com", "password": "pass003"})
+>string({"username": "user004@test.com", "password": "pass004"})
+>string({"username": "user001@test.com", "password": ""})
+>string({"username": "", "password": ""})
+>string({"username": "user001@test.com"})
+>string({"username": "user002@test.com", "password": "pass002"})
+>string({"username": "user005@test.com", "password": "pass005"})
+>string({"username": "user004@test.com", "password": "pass004"})
+>string({"password": "pass001"})
+>string({})
+<bool(True)
+<bool(False)
+<bool(True)
+<bool(True)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(True)
+<bool(True)
+<bool(True)
+<bool(False)
+<bool(False)
+
+@UserAuthenticator.getUserType
+~refactoring: input as dict
+>string({"username": "user001@test.com"})
+>string({"username": "user002@test.com"})
+>string({"username": "user003@test.com"})
+>string({"username": "user004@test.com"})
+>string({"username": "user005@test.com"})
+>string({"username": "user006@test.com"})
+>string({"username": "user007@test.com"})
+>string({"username": "user008@test.com"})
+>string({"username": "user009@test.com"})
+>string({"username": "user010@test.com"})
+<string(client)
+<string(client)
+<string(agent)
+<string(client)
+<string(client)
+<string(agent)
+<string(manager)
+<string(agent)
+<string(client)
+<string(client)
+
+@UserAuthenticator.userIsAuthorized
+~refactoring: input as dict
+>string({"key":"key_001"}),string(modifyProfile)
+>string({"key":"key_002"}),string(modifyProfile)
+>string({"key":"key_003"}),string(modifyProfile)
+<bool(True)
+<bool(True)
+<bool(True)
+>string({"key": "key_001"}),string(getInvoices)
+>string({"key": "key_002"}),string(setProfitMargin)
+>string({"key": "key_003"}),string(getAllTransactionHistory)
+<bool(True)
+<bool(False)
+<bool(True)
+>string({"key": "key_001"}),string(getAllUsers)
+>string({"key": "key_002"}),string(getQuote)
+>string({"key": "key_003"}),string(setProfitMargin)
+<bool(False)
+<bool(True)
+<bool(False)
+>string({"key": "key_001"}),string(unregisterUser)
+>string({"key": "key_002"}),string(removeUser)
+>string({"key": "key_003"}),string(getCurrentEvent)
+<bool(False)
+<bool(True)
+<bool(True)
+>string({"key": "key_010"}),string(getTrends)
+>string({"key": "key_007"}),string(setProfitMargin)
+>string({"key": "key_007"}),string(getUserType)
+<bool(False)
+<bool(True)
+<bool(True)
+
+@UserAuthenticator.generateUserKey
+~untestable: produces very unpredictable char array of 256 elements
+~+++++++++++++++++++++++++++++++++++++++++++++++
+
+@UserRegistrator.emailAvailable
+>string(user005@test.com)
+>string(user006@test.com)
+>string(user007@test.com)
+>string(user011@test.com)
+>string(user012@test.com)
+>string(user013@test.com)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(True)
+<bool(True)
+<bool(True)
+
+@UserRegistrator.passwordIsValid
+>string(password)
+>string(123)
+>string(hi123helloThere)
+<bool(False)
+<bool(False)
+<bool(True)
+
+@UserRegistrator.registerClient
+>string(user005@test.com)
+>string(user006@test.com)
+>string(user007@test.com)
+>string(user011@test.com)
+>string(user012@test.com)
+>string(user013@test.com)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(True)
+<bool(True)
+<bool(True)
+
+@UserRegistrator.registerAgent
+>string(user005@test.com)
+>string(user006@test.com)
+>string(user007@test.com)
+>string(user011@test.com)
+>string(user012@test.com)
+>string(user013@test.com)
+>string(user014@test.com)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(True)
+
+@UserRegistrator.registerManager
+>string(user005@test.com)
+>string(user006@test.com)
+>string(user007@test.com)
+>string(user011@test.com)
+>string(user012@test.com)
+>string(user013@test.com)
+>string(user014@test.com)
+>string(user015@test.com)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(False)
+<bool(True)
+
+@Main.removeUser
+>string(user011@test.com)
+>string(user012@test.com)
+>string(user013@test.com)
+>string(user014@test.com)
+>string(user015@test.com)
+<bool(True)
+<bool(True)
+<bool(True)
+<bool(True)
+<bool(True)
+
+@Pricing.getQuote
+@Pricing.getTrendFactor
+@Pricing.getUserHistoryFactor
+@Pricing.getEventFactor
+@Pricing.getLocationCharge
+@Main.login
+@Main.registerUser
+@Main.modifyProfile
+@Main.processOrder
+@Main.getQuote
+@Main.setUser
+@Main.unregisterUser
+
+@Main.getTransactionHistory
+@Main.getAllTransactionHistory
+@Main.getInvoices
+@Main.getCurrentEvent
+@Main.getRequestList
+@Main.getTrends
+@Main.getAllUsers
+@Main.getUsersOfType
+@Main.getProfitMargin
+@Main.setProfitMargin
