@@ -1,3 +1,4 @@
+import sys
 import datetime
 import router as r
 from Modules.Main import Main as mn
@@ -134,6 +135,11 @@ def parseFile(file_name):
 
 default_file = 'test_testcase.txt'
 details = False
+if(len(sys.argv) == 2):
+    default_file = sys.args[1]
+elif(len(sys.argv == 3)):
+    default_file = sys.args[1]
+    details = bool(sys.argv[2])
 parseFile(default_file)
 
 
