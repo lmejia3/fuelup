@@ -1,0 +1,39 @@
+#
+#
+#
+#
+50 users: 
+	username_01
+	password_01
+	type: (45 clients, 4 agents, 1 manager)
+	Registered_Date: some time in the past
+	
+	just for clients:
+		0-10 quotes
+		0-10 invoice
+		
+		complete the profile: 
+			address_01
+			city_01
+			state: random state (2 letters)
+			zipcode: random 5 digit number
+			Transaction: 0-10
+		
+		important note: number of quotes >= number of Invoices >= number of Transactions
+
+
+
+
+
+
+quotes & invoices:
+	gallons: 1-999
+	username...
+	price: random
+	request_date: random
+	request_delivery_date: random
+	delivery_date (for invoice only): either empty or a random date
+
+transactions:
+	refence random invoice
+	
