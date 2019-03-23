@@ -8,11 +8,11 @@ type of the user it is. It will also check the request's sender to make sure it 
 def userIsValid(user):
     result = False
     user_info = getUserInfo(user)
-    if(user_info['Passwd'] == user['password']):
+    if(('Passwd' in user_info) and user_info['Passwd'] == user['password']):
         result = True
         print(user['username'] + ' has correct passwd')
     else:
-        print(user['username'] + ' failed loggin due to invalid user/pass combo')
+        print(user['username'] + ' failed login due to invalid user/pass combo')
     user['type'] = user_info['Type_of_user']
     print("asdfzxcv")
     return result
