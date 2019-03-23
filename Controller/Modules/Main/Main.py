@@ -1,3 +1,5 @@
+from Modules.UserAuthenticator import UserAuthenticator as UA
+from Modules.UserAuthenticator.Tracker import Tracker
 """
 module provides lot of functionalities required by the users. I intend to put all the use cases for the
 usres as functions in this module. we would also create a excel file that specifies what type of user
@@ -5,7 +7,15 @@ has access to which functions, so it is easy it specify and modify user access t
 """
 
 def login(user):
-    return "zxcvasdfawerqe"
+    isValid = UA.userIsValid(user)
+    if(isValid):
+        print(user['type'])
+        key = UA.generateUserKey()
+        user['key'] = key
+        tracker = Tracker.getInstance()
+        tracker.addUser(user)
+        print(user['username'] + " successfully loggen in")
+    return "{ 'key':'" + user['key'] + "'}"
 
 def registerUser(user):
     return False

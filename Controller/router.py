@@ -1,6 +1,9 @@
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
 from Modules.ViewConnector import ViewConnector as vc
+from Modules.Main import Main
+from Modules.UserAuthenticator.Tracker import Tracker
+
 app = Flask(__name__)
 CORS(app)
 
@@ -10,80 +13,127 @@ we need to verify each request, ensuring: the user has privilege to use the requ
 the format of the request is appropriate, and only then, call the requested function.
 """
 
+Tracker() #initializing the singleton class
+
+user = {'username': 'username_09', 'password': 'password_09', 'key': '123'}
+
+
 @app.route('/')
 def dosmth():
-        return 'successfully received the request'
+    print("request @default arrived...")
+    return 'successfully received the request'
 
-@app.route('/function/login', methods=['POST'])
+@app.route('/function/login', methods=['POST', 'GET'])
 def login_route():
-    content = request.get_json()
-    print(content['username'])
-    return 'connected to login'
+    print("request @login arrived...")
+    #content = request.get_json() #replace user with content
+    response = ""
+    if(vc.validateRequest(user)):
+        response = Main.login(user)
+    if('error' in user):
+        return "{ 'error':" + user['error'] + "}"
+    return response
 
-@app.route('/function/registerUser')
+print(login_route())
+
+@app.route('/function/registerUser', methods=['POST', 'GET'])
 def registerUser_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to registerUser'
 
-@app.route('/function/modifyProfile')
+@app.route('/function/modifyProfile', methods=['POST', 'GET'])
 def modifyProfile_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to modifyProfile'
 
-@app.route('/function/processOrder')
+@app.route('/function/processOrder', methods=['POST', 'GET'])
 def processOrder_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to processOrder'
 
-@app.route('/function/getQuote')
+@app.route('/function/getQuote', methods=['POST', 'GET'])
 def function_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to getQuote'
 
-@app.route('/function/setUser')
+@app.route('/function/setUser', methods=['POST', 'GET'])
 def setUser_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to setUser'
 
-@app.route('/function/unregisterUser')
+@app.route('/function/unregisterUser', methods=['POST', 'GET'])
 def unregisterUser_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to unregisterUser'
 
-@app.route('/function/removeUser')
+@app.route('/function/removeUser', methods=['POST', 'GET'])
 def removeUser_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to removeUser'
 
-@app.route('/function/getTransactionHistory')
+@app.route('/function/getTransactionHistory', methods=['POST', 'GET'])
 def getTransactionHistory_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to getTransactionHistory'
 
-@app.route('/function/getAllTransactionHistory')
+@app.route('/function/getAllTransactionHistory', methods=['POST', 'GET'])
 def getAllTransactionHistory_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to getAllTransactionHistory'
 
-@app.route('/function/getInvoices')
+@app.route('/function/getInvoices', methods=['POST', 'GET'])
 def getInvoices_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to getInvoices'
 
-@app.route('/function/getCurrentEvent')
+@app.route('/function/getCurrentEvent', methods=['POST', 'GET'])
 def getCurrentEvent_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to getCurrentEvent'
 
-@app.route('/function/getRequestList')
+@app.route('/function/getRequestList', methods=['POST', 'GET'])
 def getRequestList_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to getRequestList'
 
-@app.route('/function/getTrends')
+@app.route('/function/getTrends', methods=['POST', 'GET'])
 def getTrends_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to getTrends'
 
-@app.route('/function/getAllUsers')
+@app.route('/function/getAllUsers', methods=['POST', 'GET'])
 def getAllUsers_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to getAllUsers'
 
-@app.route('/function/getUsersOfType')
+@app.route('/function/getUsersOfType', methods=['POST', 'GET'])
 def getUsersOfType_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to getUsersOfType'
 
-@app.route('/function/getProfitMargin')
+@app.route('/function/getProfitMargin', methods=['POST', 'GET'])
 def getProfitMargin_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to getProfitMargin'
 
-@app.route('/function/setProfitMargin')
+@app.route('/function/setProfitMargin', methods=['POST', 'GET'])
 def setProfitMargin_route():
+    print("request @login arrived...")
+    content = request.get_json()
     return 'connected to setProfitMargin'
