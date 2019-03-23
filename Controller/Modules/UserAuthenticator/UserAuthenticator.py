@@ -19,7 +19,10 @@ def userIsValid(user):
 
 def getUserInfo(user):
     result = db.getData("*", "Login_Info", "Username = '" + user['username'] + "'")
-    result = result[0]
+    if(len(result) > 0):
+        result = result[0]
+    else:
+        result = {}
     return result
 
 def userIsAuthorized(user, request):
