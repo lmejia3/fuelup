@@ -11,10 +11,9 @@ def userIsValid(user):
     if(('Passwd' in user_info) and user_info['Passwd'] == user['password']):
         result = True
         print(user['username'] + ' has correct passwd')
+        user['type'] = user_info['Type_of_user']
     else:
         print(user['username'] + ' failed login due to invalid user/pass combo')
-    user['type'] = user_info['Type_of_user']
-    print("asdfzxcv")
     return result
 
 def getUserInfo(user):
