@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3044892f-a975-4129-bf13-f56db87c1997" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Modules/DatabaseConnector/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Main/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Pricing/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/UserAuthenticator/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/UserRegistrator/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/ViewConnector/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/DatabaseConnector/DatabaseConnector.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/DatabaseConnector/DatabaseConnector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Main/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Main/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/UserAuthenticator/Tracker.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/UserAuthenticator/Tracker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/UserAuthenticator/UserAuthenticator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/UserAuthenticator/UserAuthenticator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/ViewConnector/ViewConnector.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/ViewConnector/ViewConnector.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../View/controls/signinCtrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../View/controls/signinCtrl.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,28 +38,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="14053" />
+          <entry key="py" value="14066" />
           <entry key="txt" value="416" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="416" />
-          <entry key="Python" value="14053" />
+          <entry key="Python" value="14066" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/router.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+            <state relative-caret-position="391">
+              <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
-                <marker date="1553329925383" expanded="true" signature="1103:1108" ph="..." />
+                <marker date="1553330212580" expanded="true" signature="1127:1132" ph="..." />
               </folding>
             </state>
           </provider>
@@ -127,7 +115,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/DatabaseConnector/DatabaseConnector.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -572,17 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/router.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="34" column="19" lean-forward="true" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-            <marker date="1553329925383" expanded="true" signature="1103:1108" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/UserAuthenticator/UserAuthenticator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
@@ -600,6 +577,17 @@
           <folding>
             <element signature="e#0#21#0" expanded="true" />
             <marker date="1553320795527" expanded="true" signature="442:634" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/router.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <marker date="1553330212580" expanded="true" signature="1127:1132" ph="..." />
           </folding>
         </state>
       </provider>

@@ -10,7 +10,7 @@ angular.module("yoFeul")
                 method: 'POST',
                 dataType: 'json',
                 url: 'http://18.216.110.220:20000/function/login',
-                data: {'username': $scope.user, 'password': $scope.pass},
+                data: {'username': $scope.user, 'password': $scope.pass, 'key': ''},
             };
             $http(req).then(
                 function(response){

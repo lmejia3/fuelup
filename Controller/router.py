@@ -15,7 +15,7 @@ the format of the request is appropriate, and only then, call the requested func
 
 Tracker() #initializing the singleton class
 
-user = {'username': 'username_09', 'password': 'password_09', 'key': '123'}
+user = {'username': 'username_09', 'password': 'password_09', 'key': '123'} #for testing
 
 
 @app.route('/')
@@ -26,15 +26,13 @@ def dosmth():
 @app.route('/function/login', methods=['POST', 'GET'])
 def login_route():
     print("request @login arrived...")
-    #content = request.get_json() #replace user with content
+    content = request.get_json() #replace user with content
     response = ""
-    if(vc.validateRequest(user)):
-        response = Main.login(user)
-    if('error' in user):
-        return "{ 'error':" + user['error'] + "}"
+    if(vc.validateRequest(content)):
+        response = Main.login(content)
+    if('error' in content):
+        return "{ 'error':" + content['error'] + "}"
     return response
-
-print(login_route())
 
 @app.route('/function/registerUser', methods=['POST', 'GET'])
 def registerUser_route():
