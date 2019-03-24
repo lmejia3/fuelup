@@ -33,8 +33,8 @@ def login_route():
         response = Main.login(content)
     if('error' in content):
         response['error'] = content['error']
-        return json.dump(response)
-    return json.dump(response)
+        return json.dumps(response)
+    return json.dumps(response)
 
 @app.route('/function/registerUser', methods=['POST', 'GET'])
 def registerUser_route():
