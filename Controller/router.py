@@ -28,11 +28,12 @@ def dosmth():
 def login_route():
     print("request @login arrived...")
     content = request.get_json() #replace user with content
-    response = ""
+    response = {}
     if(vc.validateRequest(content)):
         response = Main.login(content)
     if('error' in content):
-        return json.dump({ "error":"' + content["error"] + '"})
+        response['error'] = content['error']
+        return json.dump(response)
     return json.dump(response)
 
 @app.route('/function/registerUser', methods=['POST', 'GET'])

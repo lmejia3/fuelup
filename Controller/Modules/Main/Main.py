@@ -7,6 +7,7 @@ has access to which functions, so it is easy it specify and modify user access t
 """
 
 def login(user):
+    response = {}
     isValid = UA.userIsValid(user)
     if(isValid):
         print(user['type'])
@@ -15,9 +16,11 @@ def login(user):
         tracker = Tracker.getInstance()
         tracker.addUser(user)
         print(user['username'] + " successfully logged in")
+        response['key'] = key
     else:
-        return '{ "error":"user/pass did not match"}'
-    return '{ "key":"' + user["key"] + '"}'
+        print("user/pass did not match")
+        response['error'] = "user/pass did not match"
+    return response
 
 def registerUser(user):
     return False
