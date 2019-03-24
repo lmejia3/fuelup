@@ -73,6 +73,7 @@ mod.controller('registerCtrl', function($scope, registerService){
                 if('error' in data){
                     console.log(data.error)
                 } else{
+                    console.log('registered');
                     window.location = '#!login';
                 }
             },
