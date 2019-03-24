@@ -1,9 +1,8 @@
 angular.module("yoFeul",["ngRoute"])
-    .controller("generalCtrl", function($scope) {
-        $scope.isSignedIn = false;
+    .controller("generalCtrl", function($scope, loginService) {
         $scope.username = "Login";
 
-        $scope.setUsername = function(name){
-            $scope.username=name;
+        $scope.updateName = function(){
+            $scope.username= loginService.username;
         }
     })

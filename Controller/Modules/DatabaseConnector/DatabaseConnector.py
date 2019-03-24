@@ -10,8 +10,16 @@ db = getDatabaseObject()
 
 def runQuery(query):
     db.query(query)
-    result = db.use_result().fetch_row(0, how=1)
+    result = db.use_result()
+    if(type(result) == tuple):
+        result.fetch_row(0, how=1)
     return result
+
+def runInsertQuery(query, val):
+    #db.query(query, val)
+    c = db.cursor()
+    c.execute(query, val)
+    db.commit()
 
 def getData(SELECT, FROM, WHERE = ""):
     q = "SELECT " + SELECT + " FROM " + FROM

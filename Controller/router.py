@@ -33,15 +33,20 @@ def login_route():
         response = Main.login(content)
     if('error' in content):
         response['error'] = content['error']
-        print(json.dumps(response))
         return json.dumps(response)
     return json.dumps(response)
 
 @app.route('/function/registerUser', methods=['POST', 'GET'])
 def registerUser_route():
-    print("request @login arrived...")
+    print("request @registerUser arrived...")
     content = request.get_json()
-    return 'connected to registerUser'
+    response = {}
+    if(vc.validateRequest(content)):
+        response = Main.registerUser(content)
+    if('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response)
+    return json.dumps(response)
 
 @app.route('/function/modifyProfile', methods=['POST', 'GET'])
 def modifyProfile_route():

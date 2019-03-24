@@ -1,6 +1,6 @@
 var mod = angular.module("yoFeul")
 
-mod.factory('loginService', function ($http) {
+mod.factory('loginService', function ($http, server_url) {
     var info = {};
 
     info.username = null;
@@ -9,29 +9,33 @@ mod.factory('loginService', function ($http) {
     info.loggedIn = false;
 
     info.login = function (user, pass) {
-
         var req = {
             method: 'POST',
             dataType: 'json',
-            url: 'http://18.216.110.220:20000/function/login',
-            data: { 'username': user, 'password': pass, 'key': '' },
+            url: server_url + '/function/login',
+            data: { 'username': user, 'password': pass, 'key': '' }
+        };
+        return $http(req)
+    };
+
+    return info;
+})
+
+
+mod.factory('registerService', function ($http, server_url){
+    var info = {};
+
+    
+    info.register = function(user, pass, conf){
+        var req = {
+            method: 'POST',
+            dataType: 'json',
+            url: server_url + '/function/registerUser',
+            data: { 'username': user, 'password': pass, 'key': ''}
         };
 
-        $http(req).then(
-            function (response) {
-                console.log('successful responce');
-                console.log(response);
-                data = JSON.parse(response.data)
-                console.log(typeof(data))
-            },
-            function (response) {
-                console.log('failed responce');
-                console.log(response);
-            }
-        );
-
-
-    };
+        return $http(req)
+    }
 
     return info;
 })

@@ -8,16 +8,81 @@ angular.module("yoFeul")
             {gallons: 25783, address: "fakeaddress_5", rdate: "fakeQuoteDate_5", ddate: "fakeRequestDate_5",price: 3645324512,paid: true}
         ];
 
-        $scope.setUsername = function(name){
-            $scope.username=name;
-        }
     })
 
 var mod = angular.module("yoFeul")
 
-mod.controller("loginCtrl", function(loginService){
+mod.controller("loginCtrl", function($scope, loginService){
     this.login = function(user, pass){
-        loginService.login(user, pass)
+        if(user == undefined){
+
+        }
+        if(pass == undefined){
+
+        }
+        
+        var lg = loginService;
+        var promise = lg.login(user, pass);
+
+        promise.then(
+            function (response) {
+                console.log('successful responce');
+                console.log(response);
+                data = response.data;
+                if('error' in data){
+                    console.log(data.error)
+                } else {
+                    lg.username = user;
+                    console.log("IM HERE: " + lg.username);
+                    lg.password = pass;
+                    lg.key = data.key
+                    lg.loggedIn = true;
+                    $scope.updateName();
+                    window.location = '#!user/profile';
+                }
+            },
+            function (response) {
+                console.log('failed responce');
+                console.log(response);
+            }
+        );
     }
 
-})
+});
+
+mod.controller('registerCtrl', function($scope, registerService){
+    this.register = function(user, pass, conf){
+        if(user == undefined){
+
+        }
+        if(pass == undefined){
+            
+        }
+        if(conf == undefined){
+            
+        }
+
+        var rs = registerService;
+        var promise = rs.register(user, pass, conf);
+        
+        promise.then(
+            function (reponse){
+                console.log('successful responce');
+                console.log(response);
+                data = response.data;
+                if('error' in data){
+                    console.log(data.error)
+                } else{
+                    window.location = '#!login';
+                }
+            },
+            function (response){
+                console.log('failed responce');
+                console.log(response);
+            }
+        );
+    };
+
+
+});
+

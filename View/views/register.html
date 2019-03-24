@@ -1,25 +1,26 @@
-<div class="container" ng-controller="signInCtrl">
+<div class="container" ng-controller="registerCtrl as rs">
     <form class="form-horizontal" id="form_login">
         <h2 class="text-light">Register for free!</h2>
         <div class="form-group row justify-content-center">
             <div class="col-9 ">
-                <input type="text" id="email" class="form-control" placeholder="email" name="email" ng-model="user">
+                <input type="text" id="email" class="form-control" placeholder="email" name="email" ng-model="user" autocomplete="username">
             </div>
         </div>
         <div class="form-group row justify-content-center">
             <div class="col-9 ">
-                <input type="password" id="pass" class="form-control" placeholder="password" name="pass">
+                <input type="password" id="pass" class="form-control" placeholder="password" name="pass"
+                    ng-model="pass" autocomplete="current-password">
             </div>
         </div>
         <div class="form-group row justify-content-center">
             <div class="col-9 ">
                 <input type="password" id="confirm-pass" class="form-control" placeholder="confirm password"
-                    name="pass">
+                    name="confirm-pass" ng-model="conf" autocomplete="new-password">
             </div>
         </div>
         <div class="form-group row justify-content-center">
             <div class="form-group row justify-content-center">
-                <button type="submit" class="btn btn-primary col-6" ng-click="verifyUsername()">Sign Up</button>
+                <button type="submit" class="btn btn-primary col-6" ng-click="rs.register(user, pass, conf)">Sign Up</button>
                 <button type="button" class="btn btn-link col-12" onclick="window.location.href= '#!login';">Already
                     Registered?</button>
             </div>
