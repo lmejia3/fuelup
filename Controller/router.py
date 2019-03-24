@@ -33,6 +33,7 @@ def login_route():
         response = Main.login(content)
     if('error' in content):
         response['error'] = content['error']
+        print(json.dumps(response))
         return json.dumps(response)
     return json.dumps(response)
 
