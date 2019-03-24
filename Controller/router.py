@@ -3,6 +3,7 @@ from flask_cors import CORS, cross_origin
 from Modules.ViewConnector import ViewConnector as vc
 from Modules.Main import Main
 from Modules.UserAuthenticator.Tracker import Tracker
+import json
 
 app = Flask(__name__)
 CORS(app)
@@ -31,8 +32,8 @@ def login_route():
     if(vc.validateRequest(content)):
         response = Main.login(content)
     if('error' in content):
-        return '{ "error":"' + content["error"] + '"}'
-    return response
+        return json.dump('{ "error":"' + content["error"] + '"}')
+    return json.dump(response)
 
 @app.route('/function/registerUser', methods=['POST', 'GET'])
 def registerUser_route():
