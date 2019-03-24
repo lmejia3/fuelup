@@ -31,7 +31,7 @@ def login_route():
     if(vc.validateRequest(content)):
         response = Main.login(content)
     if('error' in content):
-        return "{ 'error':" + content['error'] + "}"
+        return '{ "error":' + content["error"] + '}'
     return response
 
 @app.route('/function/registerUser', methods=['POST', 'GET'])

@@ -21,7 +21,7 @@ mod.factory('loginService', function ($http) {
             function (response) {
                 console.log('successful responce');
                 console.log(response);
-                data = JSON.parse("{'user': 1}")
+                data = JSON.parse(response.data)
                 console.log(typeof(data))
             },
             function (response) {
