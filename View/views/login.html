@@ -1,19 +1,19 @@
-<div class="container" ng-controller="signInCtrl">
+<div class="container" ng-controller="loginCtrl as lg">
     <form class="form-horizontal" id="form_login">
         <h2 class="text-light">Login!</h2>
         <div class="form-group row justify-content-center">
             <div class="col-9 ">
-                <input type="text" id="email" class="form-control" placeholder="email" name="email" ng-model="user">
+                <input type="text" id="email" class="form-control" placeholder="email" name="email" ng-model="user" autocomplete="username">
             </div>
         </div>
         <div class="form-group row justify-content-center">
             <div class="col-9 ">
-                <input type="password" id="pass" class="form-control" placeholder="password" name="pass" ng-model="pass">
+                <input type="password" id="pass" class="form-control" placeholder="password" name="pass" ng-model="pass" autocomplete="current-password">
             </div>
         </div>
         <div class="form-group row justify-content-center">
             <div class="form-group row justify-content-center">
-                <button type="button" class="btn btn-primary col-6" ng-click="verifyUsername()">Log in</button>
+                <button type="button" class="btn btn-primary col-6" ng-click="lg.login(user, pass)">Log in</button>
                 <button type="button" class="btn btn-link col-12" onclick="window.location.href= '#!getpass';">Forgot
                     Password?</button>
                 <button type="button" class="btn btn-link col-12" onclick="window.location.href= '#!register';">Sign

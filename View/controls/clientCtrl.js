@@ -12,3 +12,12 @@ angular.module("yoFeul")
             $scope.username=name;
         }
     })
+
+var mod = angular.module("yoFeul")
+
+mod.controller("loginCtrl", function(loginService){
+    this.login = function(user, pass){
+        loginService.login(user, pass)
+    }
+
+})

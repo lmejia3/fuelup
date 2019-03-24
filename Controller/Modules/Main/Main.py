@@ -16,8 +16,8 @@ def login(user):
         tracker.addUser(user)
         print(user['username'] + " successfully logged in")
     else:
-        return "{ 'error':'user/pass did not match'}"
-    return "{ 'key':'" + user['key'] + "'}"
+        return '{ "error":"user/pass did not match"}'
+    return '{ "key":"' + user["key"] + '"}'
 
 def registerUser(user):
     return False
