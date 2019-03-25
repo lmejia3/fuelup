@@ -91,16 +91,16 @@ mod.controller('registerCtrl', function($scope, registerService){
 
 mod.controller('profileCtrl', function($scope, requestService, loginService){
     this.send = function(first, last, company, add1, add2, city, state, zip){
-
+        console.log(typeof(first))
         var reqdata = {
-            'firstname': (first == undefined) ? "": first,
-            'lastname': (last == undefined) ? "": last,
-            'company': (company == undefined) ? "": company,
-            'address1': (add1 == undefined) ? "": add1,
-            'address2': (add2 == undefined) ? "": add2,
-            'city': (city == undefined) ? "": city,
-            'state': (state == undefined) ? "": state,
-            'zipcode': (zip == undefined) ? "": zip,
+            'firstname': (first == undefined) ? null: first,
+            'lastname': (last == undefined) ? null: last,
+            'company': (company == undefined) ? null: company,
+            'address1': (add1 == undefined) ? null: add1,
+            'address2': (add2 == undefined) ? null: add2,
+            'city': (city == undefined) ? null: city,
+            'state': (state == undefined) ? null: state,
+            'zipcode': (zip == undefined) ? null: zip,
             'key': loginService.key,
             'username': loginService.username
         }
