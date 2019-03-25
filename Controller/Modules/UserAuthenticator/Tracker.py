@@ -27,7 +27,7 @@ class Tracker:
             return False
 
     def getActiveUserInfo(self, key):
-        return self.__bank['key']
+        return self.__bank[key]
 
     def removeUser(self, user):
         del self.__bank[user['username']]

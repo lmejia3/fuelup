@@ -34,6 +34,8 @@ def userIsAuthorized(user, request):
         print('user is not in the active user pool.')
         user['error'] = 'not active.'
         return False
+    else:
+        print('user is in active pool.')
 
     user_info = tr.getActiveUserInfo(user['key'])
     if(user['username'] != user_info['username']):
