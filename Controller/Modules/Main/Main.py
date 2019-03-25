@@ -57,14 +57,14 @@ def registerUser(user):
 def modifyProfile(form):
     response = {}
     q = 'UPDATE Profile_for_Users NATURAL JOIN Login_Info SET First_Name = %s, Last_Name = %s, Company_Name = %s, Address = %s, City = %s, State = %s, Zipcode = %s WHERE Username = %s;'
-    print(form)
     val = [form['firstname'], form['lastname'], form['company'], form['address1'] + form['address2'], form['city'], form['state'], form['zipcode'], form['username']]
+    print(val)
     db.runInsertQuery(q, val)
     response['status'] = 'updated'
     return response
 
-#form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_06'}
-#modifyProfile(form)
+form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_06'}
+modifyProfile(form)
 
 def processOrder(user, order):
     return False

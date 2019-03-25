@@ -91,7 +91,6 @@ mod.controller('registerCtrl', function($scope, registerService){
 
 mod.controller('profileCtrl', function($scope, requestService, loginService){
     this.send = function(first, last, company, add1, add2, city, state, zip){
-        console.log(typeof(first))
         var reqdata = {
             'firstname': (first == undefined) ? null: first,
             'lastname': (last == undefined) ? null: last,
@@ -104,6 +103,7 @@ mod.controller('profileCtrl', function($scope, requestService, loginService){
             'key': loginService.key,
             'username': loginService.username
         }
+        console.log(reqdata)
         var rs = requestService;
         var promise = rs.send('modifyProfile', reqdata);
         
