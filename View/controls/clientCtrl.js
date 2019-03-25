@@ -99,7 +99,7 @@ mod.controller('profileCtrl', function($scope, requestService, loginService){
             'address2': (add2 == undefined) ? null: add2,
             'city': (city == undefined) ? null: city,
             'state': (state == undefined) ? null: state,
-            'zipcode': (zip == undefined) ? null: zip,
+            'zipcode': (zip == undefined) ? 00000: zip,
             'key': loginService.key,
             'username': loginService.username
         }
