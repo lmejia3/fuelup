@@ -63,8 +63,8 @@ def modifyProfile(form):
     response['status'] = 'updated'
     return response
 
-form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_06'}
-modifyProfile(form)
+#form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_06'}
+#modifyProfile(form)
 
 def processOrder(user, order):
     return False
