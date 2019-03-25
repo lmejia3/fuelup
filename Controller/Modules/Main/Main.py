@@ -57,7 +57,7 @@ def registerUser(user):
 def modifyProfile(form):
     response = {}
     q = 'UPDATE Profile_for_Users NATURAL JOIN Login_Info SET First_Name = %s, Last_Name = %s, Company_Name = %s, Address = %s, City = %s, State = %s, Zipcode = %s WHERE Username = %s;'
-    val = [form['firstname'], form['lastname'], form['company'], form['address1'] + form['address2'], form['city'], form['state'], form['zipcode'], form['username']]
+    val = [form['firstname'], form['lastname'], form['company'], form['address1'], form['city'], form['state'], form['zipcode'], form['username']]
     print(val)
     db.runInsertQuery(q, val)
     response['status'] = 'updated'
