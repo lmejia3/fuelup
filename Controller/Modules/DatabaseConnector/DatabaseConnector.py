@@ -14,10 +14,8 @@ def runQuery(query):
     result = result.fetch_row(0, how=1)
     return result
 
-def runInsertQuery(query, val):
-    #db.query(query, val)
-    c = db.cursor()
-    c.execute(query, val)
+def runInsertQuery(query):
+    db.query(query)
     db.commit()
 
 def getData(SELECT, FROM, WHERE = ""):

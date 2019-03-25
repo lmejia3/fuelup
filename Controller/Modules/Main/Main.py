@@ -47,23 +47,24 @@ def registerUser(user):
 
     user['type'] = 'client'
     user['date'] = str(date.today())
-    q = 'INSERT INTO Login_Info (Username, Passwd, Type_of_user, Register_Date)' \
-        ' VALUES (%s, %s, %s, %s);'
-    val = [user['username'], user['password'], user['type'], user['date']]
-    db.runInsertQuery(q, val)
+    q = 'INSERT INTO Login_Info (Username, Passwd, Type_of_user, Register_Date) VALUES ("%s", "%s", "%s", "%s");' \
+        % (user['username'], user['password'], user['type'], user['date'])
+    db.runInsertQuery(q)
     response['status'] = 'added'
     return response
 
 def modifyProfile(form):
     response = {}
-    q = 'UPDATE Profile_for_Users NATURAL JOIN Login_Info SET First_Name = %s, Last_Name = %s, Company_Name = %s, Address = %s, City = %s, State = %s, Zipcode = %s WHERE Username = %s;'
-    val = [form['firstname'], form['lastname'], form['company'], form['address1'], form['city'], form['state'], form['zipcode'], form['username']]
-    print(type(form['firstname']))
-    db.runInsertQuery(q, val)
+    q = 'UPDATE Profile_for_Users NATURAL JOIN Login_Info SET First_Name = "%s", Last_Name = "%s", Company_Name = "%s", Address = "%s", City = "%s", State = "%s", Zipcode = %s WHERE Username = "%s";' \
+        % (form['firstname'], form['lastname'], form['company'], form['address1'], form['city'], form['state'], form['zipcode'], form['username'])
+    db.runInsertQuery(q)
     response['status'] = 'updated'
     return response
 
-form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_06'}
+
+form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_07'}
+q = 'UPDATE Profile_for_Users NATURAL JOIN Login_Info SET First_Name = "%s", Last_Name = "%s", Company_Name = "%s", Address = "%s", City = "%s", State = "%s", Zipcode = %s WHERE Username = "%s";' \
+    % (form['firstname'], form['lastname'], form['company'], form['address1'], form['city'], form['state'], form['zipcode'], form['username'])
 modifyProfile(form)
 
 def processOrder(user, order):
