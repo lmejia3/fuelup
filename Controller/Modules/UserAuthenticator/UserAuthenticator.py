@@ -1,5 +1,6 @@
 import random
 from Modules.DatabaseConnector import DatabaseConnector as db
+from Modules.UserAuthenticator.Tracker import Tracker
 """
 module responsible for ensuring that the user/pass is correct according to the database and deciding what
 type of the user it is. It will also check the request's sender to make sure it is authorized.
@@ -25,6 +26,21 @@ def getUserInfo(user):
     return result
 
 def userIsAuthorized(user, request):
+    tr = Tracker.getInstance()
+    if(not tr.userIsActive(user['key'])):
+        print('user is not in the active user pool.')
+        user['error'] = 'not active.'
+        return False
+
+    user_info = tr.getActiveUserInfo(user['key'])
+    if(user['username'] != user_info['username']):
+        print('username does not match the key!!!')
+        user['error'] = 'username does not match the key!'
+        return False
+
+    if(user_info['type'] == 'client'):
+        if(request == 'modifyProfile'):
+            return True
     return False
 
 def generateUserKey():

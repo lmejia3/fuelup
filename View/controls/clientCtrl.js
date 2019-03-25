@@ -66,8 +66,8 @@ mod.controller('registerCtrl', function($scope, registerService){
         var promise = rs.register(user, pass, conf);
         
         promise.then(
-            function (reponse){
-                console.log('successful responce');
+            function (response){
+                console.log('successful response');
                 console.log(response);
                 data = response.data;
                 if('error' in data){
@@ -79,6 +79,46 @@ mod.controller('registerCtrl', function($scope, registerService){
             },
             function (response){
                 console.log('failed responce');
+                console.log(response);
+            }
+        );
+    };
+
+
+});
+
+mod.controller('profileCtrl', function($scope, requestService, loginService){
+    this.send = function(first, last, company, add1, add2, city, state, zip){
+        
+        var reqdata = {
+            'firstname': first,
+            'lastname': last,
+            'company': company,
+            'address1': add1,
+            'address2': add2,
+            'city': city,
+            'state': state,
+            'zipcode': zip,
+            'key': loginService.key,
+            'username': loginService.username
+        }
+        var rs = requestService;
+        var promise = rs.send('modifyProfile', reqdata);
+        
+        promise.then(
+            function (response){
+                console.log('successful response');
+                console.log(response);
+                data = response.data;
+                if('error' in data){
+                    console.log(data.error)
+                } else{
+                    console.log('updated');
+                    //window.location = '#!login';
+                }
+            },
+            function (response){
+                console.log('failed response');
                 console.log(response);
             }
         );

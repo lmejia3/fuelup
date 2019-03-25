@@ -39,3 +39,21 @@ mod.factory('registerService', function ($http, server_url){
 
     return info;
 })
+
+mod.factory('requestService', function ($http, server_url, loginService){
+    var info = {};
+
+    
+    info.send = function(req_name, data_j){
+        var req = {
+            method: 'POST',
+            dataType: 'json',
+            url: server_url + '/function/' + req_name,
+            data: data_j
+        };
+
+        return $http(req);
+    }
+
+    return info;
+})

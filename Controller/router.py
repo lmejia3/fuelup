@@ -3,6 +3,7 @@ from flask_cors import CORS, cross_origin
 from Modules.ViewConnector import ViewConnector as vc
 from Modules.Main import Main
 from Modules.UserAuthenticator.Tracker import Tracker
+from Modules.UserAuthenticator import UserAuthenticator as ua
 import json
 
 app = Flask(__name__)
@@ -50,9 +51,15 @@ def registerUser_route():
 
 @app.route('/function/modifyProfile', methods=['POST', 'GET'])
 def modifyProfile_route():
-    print("request @login arrived...")
+    print("request @modifyProfile arrived...")
     content = request.get_json()
-    return 'connected to modifyProfile'
+    response = {}
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'modifyProfile')):
+        response = Main.modifyProfile(content)
+    if ('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response)
+    return json.dumps(response)
 
 @app.route('/function/processOrder', methods=['POST', 'GET'])
 def processOrder_route():

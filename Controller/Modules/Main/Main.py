@@ -16,11 +16,11 @@ def login(user):
         print(user['type'])
         key = UA.generateUserKey()
         user['key'] = key
+        response['key'] = key
+        response['type'] = user['type']
         tracker = Tracker.getInstance()
         tracker.addUser(user)
         print(user['username'] + " successfully logged in")
-        response['key'] = key
-        response['type'] = user['type']
     else:
         print("user/pass did not match")
         response['error'] = "user/pass did not match"
@@ -54,14 +54,17 @@ def registerUser(user):
     response['status'] = 'added'
     return response
 
-user = {'username': 'username_43', 'password': 'password_43', 'type': 'client','date':'0000-00-00'}
-q = 'INSERT INTO Login_Info (Username_ID, Username, Passwd, Type_of_user, Register_Date)' \
-        ' VALUES (%s, %s, %s, %s, %s);'
-val = [43, user['username'], user['password'], user['type'], user['date']]
-db.runInsertQuery(q, val)
+def modifyProfile(form):
+    response = {}
+    q = 'UPDATE Profile_for_Users NATURAL JOIN Login_Info SET First_Name = %s, Last_Name = %s, Company_Name = %s, Address = %s, City = %s, State = %s, Zipcode = %s WHERE Username = %s;'
+    print(q)
+    val = [form['firstname'], form['lastname'], form['company'], form['address1'] + form['address2'], form['city'], form['state'], form['zipcode'], form['username']]
+    db.runInsertQuery(q, val)
+    response['status'] = 'updated'
+    return response
 
-def modifyProfile(user, form):
-    return False
+form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_06'}
+modifyProfile(form)
 
 def processOrder(user, order):
     return False

@@ -17,8 +17,17 @@ class Tracker:
 
     __bank = {}
     def addUser(self, user):
-        self.__bank[user['username']] = user['key']
+        self.__bank[user['key']] = {'username': user['username'], 'type': user['type']}
         print(user['username'] + ' is added to the active user pool')
+
+    def userIsActive(self, key):
+        if(key in self.__bank):
+            return True
+        else:
+            return False
+
+    def getActiveUserInfo(self, key):
+        return self.__bank['key']
 
     def removeUser(self, user):
         del self.__bank[user['username']]
