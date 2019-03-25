@@ -16,9 +16,11 @@ mod.controller("loginCtrl", function($scope, loginService){
     this.login = function(user, pass){
         if(user == undefined){
 
+            return;
         }
         if(pass == undefined){
 
+            return;
         }
         
         var lg = loginService;
@@ -53,13 +55,13 @@ mod.controller("loginCtrl", function($scope, loginService){
 mod.controller('registerCtrl', function($scope, registerService){
     this.register = function(user, pass, conf){
         if(user == undefined){
-
+            return;
         }
         if(pass == undefined){
-            
+            return;
         }
         if(conf == undefined){
-            
+            return;
         }
 
         var rs = registerService;
@@ -89,16 +91,16 @@ mod.controller('registerCtrl', function($scope, registerService){
 
 mod.controller('profileCtrl', function($scope, requestService, loginService){
     this.send = function(first, last, company, add1, add2, city, state, zip){
-        
+
         var reqdata = {
-            'firstname': first,
-            'lastname': last,
-            'company': company,
-            'address1': add1,
-            'address2': add2,
-            'city': city,
-            'state': state,
-            'zipcode': zip,
+            'firstname': (first == undefined) ? "": first,
+            'lastname': (last == undefined) ? "": last,
+            'company': (company == undefined) ? "": company,
+            'address1': (add1 == undefined) ? "": add1,
+            'address2': (add2 == undefined) ? "": add2,
+            'city': (city == undefined) ? "": city,
+            'state': (state == undefined) ? "": state,
+            'zipcode': (zip == undefined) ? "": zip,
             'key': loginService.key,
             'username': loginService.username
         }
