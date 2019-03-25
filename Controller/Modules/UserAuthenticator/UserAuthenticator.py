@@ -25,6 +25,9 @@ def getUserInfo(user):
         result = {}
     return result
 
+#user = {'username': 'username_05', 'password': 'password_05'}
+#userIsValid(user)
+
 def userIsAuthorized(user, request):
     tr = Tracker.getInstance()
     if(not tr.userIsActive(user['key'])):

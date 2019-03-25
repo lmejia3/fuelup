@@ -15,7 +15,7 @@ mod.factory('loginService', function ($http, server_url) {
             url: server_url + '/function/login',
             data: { 'username': user, 'password': pass, 'key': '' }
         };
-        return $http(req)
+        return $http(req);
     };
 
     return info;
@@ -34,7 +34,7 @@ mod.factory('registerService', function ($http, server_url){
             data: { 'username': user, 'password': pass, 'key': ''}
         };
 
-        return $http(req)
+        return $http(req);
     }
 
     return info;
