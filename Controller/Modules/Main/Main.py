@@ -4,6 +4,7 @@ from Modules.DatabaseConnector import DatabaseConnector as db
 from Modules.Pricing import Pricing as PR
 from datetime import date
 from Modules.UserAuthenticator.Tracker import Tracker
+
 """
 module provides lots of functionalities required by the users. I intend to put all the use cases for the
 usres as functions in this module. we would also create a excel file that specifies what type of user

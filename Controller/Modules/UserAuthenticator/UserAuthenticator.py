@@ -1,6 +1,7 @@
 import random
 from Modules.DatabaseConnector import DatabaseConnector as db
 from Modules.UserAuthenticator.Tracker import Tracker
+
 """
 module responsible for ensuring that the user/pass is correct according to the database and deciding what
 type of the user it is. It will also check the request's sender to make sure it is authorized.
@@ -25,8 +26,10 @@ def getUserInfo(user):
         result = {}
     return result
 
-#user = {'username': 'username_05', 'password': 'password_05'}
-#userIsValid(user)
+user = {'username': 'username_05', 'password': 'password_05'}
+userIsValid(user)
+user = {'username': 'username_05', 'password': 'password_06'}
+userIsValid(user)
 
 def userIsAuthorized(user, request):
     tr = Tracker.getInstance()
@@ -58,8 +61,13 @@ def userIsAuthorized(user, request):
             return True
     return False
 
+user = {'username': 'username_05', 'password': 'password_05', 'key': '123'}
+userIsValid(user)
+
 def generateUserKey():
     key = ""
     for i in range(0, 256):
         key += chr(random.randint(0,255))
     return key
+
+generateUserKey();
