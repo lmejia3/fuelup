@@ -4,6 +4,10 @@ transactions, trends, profit margin, and location.
 """
 
 def getQuote(form):
+    getTrendFactor()
+    getUserHistoryFactor(1)
+    getEventFactor()
+    getLocationCharge()
     return 0.0
 
 def getTrendFactor():

@@ -10,15 +10,15 @@ def emailIsValid(email):
     if re.match(r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", email):
         return True
     else:
-        return False
+        return True
 
 """check if the email is taken or not"""
 def emailAvailable(email):
     user = UA.getUserInfo({'username': email})
     if(user):
-        return True
-    else:
         return False
+    else:
+        return True
 
 def passwordIsValid(password):
     if password != "":

@@ -3,7 +3,7 @@ import MySQLdb.cursors as cur
 
 def getDatabaseObject():
     db = sql.connect(host="yofueldb.cbbjfhnlihgx.us-east-2.rds.amazonaws.com",
-                     port=3306,user="server_backend",passwd="mypassword.net52005",db="FuelTest")
+                     port=3306,user="server_backend",passwd="mypassword.net52005",db="FuelDummy")
     return db
 
 db = getDatabaseObject()

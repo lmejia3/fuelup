@@ -30,6 +30,8 @@ user = {'username': 'username_05', 'password': 'password_05'}
 userIsValid(user)
 user = {'username': 'username_05', 'password': 'password_06'}
 userIsValid(user)
+user = {'username': 'username_042', 'password': 'password_06'}
+userIsValid(user)
 
 def userIsAuthorized(user, request):
     tr = Tracker.getInstance()
@@ -62,7 +64,7 @@ def userIsAuthorized(user, request):
     return False
 
 user = {'username': 'username_05', 'password': 'password_05', 'key': '123'}
-userIsValid(user)
+userIsAuthorized(user, 'getQuote')
 
 def generateUserKey():
     key = ""

@@ -28,6 +28,11 @@ def login(user):
         response['error'] = "user/pass did not match"
     return response
 
+user = {'username':'usrename_01', 'password':'password_01'}
+login(user)
+user = {'username':'bliat', 'password':'password_01'}
+login(user)
+
 def registerUser(user):
     response = {}
     if(('username' not in user) or ('password' not in user)):
@@ -53,11 +58,31 @@ def registerUser(user):
         % (user['username'], user['password'], user['type'], user['date'])
     db.runInsertQuery(q)
     id = db.runQuery('SELECT Username_ID FROM Login_Info WHERE Username = "%s"' \
-                     % (form['username']))[0]['Username_ID']
-    db.runInsertQuery('INSERT INTO Profile_for_Users (Username_ID) VALUES (%sz)' \
+                     % (user['username']))[0]['Username_ID']
+    db.runInsertQuery('INSERT INTO Profile_for_Users (Username_ID) VALUES (%s)' \
                       % (id))
     response['status'] = 'added'
     return response
+
+user = {'username': 'hello@hi.com', 'password': 'oioi'}
+registerUser(user)
+user = {'password': 'oioi'}
+registerUser(user)
+user = {'username': 'hello@hi.com', 'password': ''}
+registerUser(user)
+user = {'username': 'username_01', 'password': 'oioi'}
+registerUser(user)
+user = {'username': 'username_43', 'password': 'oioi'}
+registerUser(user)
+user = {'username': 'username_41', 'password': 'oioi'}
+registerUser(user)
+user = {'username': 'blah@hi.com', 'password': 'oioi'}
+registerUser(user)
+user = {'username': 'blah@hi.com', 'password': 'oioi'}
+registerUser(user)
+user = {'username': 'blah@hi.com', 'password': 'oioi'}
+registerUser(user)
+login(user)
 
 def modifyProfile(form):
     response = {}
@@ -81,6 +106,13 @@ def modifyProfile(form):
     response['status'] = 'updated'
     return response
 
+form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_43', \
+        'gallons': '300', 'date': '2019-01-01'}
+modifyProfile(form)
+form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', \
+        'gallons': '300', 'date': '2019-01-01'}
+modifyProfile(form)
+
 def processOrder(user, order):
     return False
 
@@ -103,6 +135,12 @@ def getQuote(form):
 
     return response
 
+form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_43', \
+        'gallons': '300', 'date': '2019-01-01'}
+getQuote(form)
+form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', \
+        'gallons': '300', 'date': '2019-01-01'}
+getQuote(form)
 
 def createInvoice(form):
     response = {}
@@ -114,6 +152,11 @@ def createInvoice(form):
     q = 'INSERT INTO Invoice'
 
     return response
+
+form = {'quote_id' : '1', 'username': 'us'}
+createInvoice(form)
+form = {'quote_id' : '1'}
+createInvoice(form)
 
 def getInvoices(user):
     response = {}
@@ -133,7 +176,10 @@ def getInvoices(user):
 
 form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_43', \
         'gallons': '300', 'date': '2019-01-01'}
-#getInvoices(form)
+getInvoices(form)
+form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', \
+        'gallons': '300', 'date': '2019-01-01'}
+getInvoices(form)
 
 def getAllUsers():
     response = {}
@@ -144,6 +190,8 @@ def getAllUsers():
         dataobj[i] = result[i]
     response['invoices'] = dataobj;
     return response
+
+getAllUsers()
 
 def getUsersOfType(t):
     response = {}
@@ -161,35 +209,55 @@ def getUsersOfType(t):
     response['invoices'] = dataobj;
     return response
 
-#getUsersOfType('agent')
+getUsersOfType('agent')
+getUsersOfType(1)
 
 def getCurrentEvent():
     return ""
 
+getCurrentEvent()
+
 def getRequestList():
     return ""
+
+getRequestList()
 
 def getTrends(bounds):
     return ""
 
+getTrends(1)
+
 def getProfitMargin(type):
     return 0.0
+getProfitMargin(1)
 
 def setProfitMargin():
     return False
+
+setProfitMargin()
 
 def setUser(user):
 
     return False
 
+setUser(1)
+
 def unregisterUser(user):
     return False
+
+unregisterUser(1)
 
 def removeUser(user):
     return False
 
+removeUser(1)
+
 def getTransactionHistory(user, bounds):
     return ""
 
+getTransactionHistory(1,1)
+
 def getAllTransactionHistory(user):
     return ""
+
+getAllTransactionHistory(1)
