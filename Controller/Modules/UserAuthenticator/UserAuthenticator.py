@@ -50,6 +50,12 @@ def userIsAuthorized(user, request):
             return True
         elif (request == 'createInvoice'):
             return True
+        elif (request == 'getInvoice'):
+            return True
+        elif (request == 'getAllUsers'):
+            return True
+        elif (request == 'getUsersOfType'):
+            return True
     return False
 
 def generateUserKey():

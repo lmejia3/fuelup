@@ -114,24 +114,6 @@ def createInvoice(form):
 
     return response
 
-
-
-def setUser(user):
-
-    return False
-
-def unregisterUser(user):
-    return False
-
-def removeUser(user):
-    return False
-
-def getTransactionHistory(user, bounds):
-    return ""
-
-def getAllTransactionHistory(user):
-    return ""
-
 def getInvoices(user):
     response = {}
     if ('username' not in user):
@@ -151,15 +133,6 @@ def getInvoices(user):
 form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_43', \
         'gallons': '300', 'date': '2019-01-01'}
 #getInvoices(form)
-
-def getCurrentEvent():
-    return ""
-
-def getRequestList():
-    return ""
-
-def getTrends(bounds):
-    return ""
 
 def getAllUsers():
     response = {}
@@ -187,10 +160,35 @@ def getUsersOfType(t):
     response['invoices'] = dataobj;
     return response
 
-getUsersOfType('agent')
+#getUsersOfType('agent')
+
+def getCurrentEvent():
+    return ""
+
+def getRequestList():
+    return ""
+
+def getTrends(bounds):
+    return ""
 
 def getProfitMargin(type):
     return 0.0
 
 def setProfitMargin():
     return False
+
+def setUser(user):
+
+    return False
+
+def unregisterUser(user):
+    return False
+
+def removeUser(user):
+    return False
+
+def getTransactionHistory(user, bounds):
+    return ""
+
+def getAllTransactionHistory(user):
+    return ""

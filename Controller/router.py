@@ -17,8 +17,7 @@ the format of the request is appropriate, and only then, call the requested func
 
 Tracker() #initializing the singleton class
 
-user = {'username': 'username_09', 'password': 'password_09', 'key': '123'} #for testing
-
+#user = {'username': 'username_09', 'password': 'password_09', 'key': '123'} #for testing
 
 @app.route('/')
 def dosmth():
@@ -68,24 +67,24 @@ def processOrder_route():
     return 'connected to processOrder'
 
 @app.route('/function/getQuote', methods=['POST', 'GET'])
-def getQuote():
+def getQuote_route():
     print("request @getQuote arrived...")
     content = request.get_json()
     response = {}
-    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'modifyProfile')):
-        response = Main.modifyProfile(content)
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'getQuote')):
+        response = Main.getQuote(content)
     if ('error' in content):
         response['error'] = content['error']
         return json.dumps(response)
     return json.dumps(response)
 
 @app.route('/function/createInvoice', methods=['POST', 'GET'])
-def createInvoice():
+def createInvoice_route():
     print("request @createInvoice arrived...")
     content = request.get_json()
     response = {}
     if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'createInvoice')):
-        response = Main.modifyProfile(content)
+        response = Main.createInvoice(content)
     if ('error' in content):
         response['error'] = content['error']
         return json.dumps(response)
@@ -123,9 +122,15 @@ def getAllTransactionHistory_route():
 
 @app.route('/function/getInvoices', methods=['POST', 'GET'])
 def getInvoices_route():
-    print("request @login arrived...")
-    content = request.get_json()
-    return 'connected to getInvoices'
+        print("request @getInvoices arrived...")
+        content = request.get_json()
+        response = {}
+        if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'getInvoices')):
+            response = Main.modifyProfile(content)
+        if ('error' in content):
+            response['error'] = content['error']
+            return json.dumps(response)
+        return json.dumps(response)
 
 @app.route('/function/getCurrentEvent', methods=['POST', 'GET'])
 def getCurrentEvent_route():
@@ -147,15 +152,27 @@ def getTrends_route():
 
 @app.route('/function/getAllUsers', methods=['POST', 'GET'])
 def getAllUsers_route():
-    print("request @login arrived...")
+    print("request @getAllUsers arrived...")
     content = request.get_json()
-    return 'connected to getAllUsers'
+    response = {}
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'getAllUsers')):
+        response = Main.getAllUsers(content)
+    if ('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response)
+    return json.dumps(response)
 
 @app.route('/function/getUsersOfType', methods=['POST', 'GET'])
 def getUsersOfType_route():
-    print("request @login arrived...")
+    print("request @getUsersOfType arrived...")
     content = request.get_json()
-    return 'connected to getUsersOfType'
+    response = {}
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'getUsersOfType')):
+        response = Main.getUsersOfType(content)
+    if ('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response)
+    return json.dumps(response)
 
 @app.route('/function/getProfitMargin', methods=['POST', 'GET'])
 def getProfitMargin_route():
