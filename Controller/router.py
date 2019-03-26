@@ -54,7 +54,7 @@ def modifyProfile_route():
     print("request @modifyProfile arrived...")
     content = request.get_json()
     response = {}
-    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'modifyProfile')):
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'getQuote')):
         response = Main.modifyProfile(content)
     if ('error' in content):
         response['error'] = content['error']
@@ -68,10 +68,28 @@ def processOrder_route():
     return 'connected to processOrder'
 
 @app.route('/function/getQuote', methods=['POST', 'GET'])
-def function_route():
-    print("request @login arrived...")
+def getQuote():
+    print("request @getQuote arrived...")
     content = request.get_json()
-    return 'connected to getQuote'
+    response = {}
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'modifyProfile')):
+        response = Main.modifyProfile(content)
+    if ('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response)
+    return json.dumps(response)
+
+@app.route('/function/createInvoice', methods=['POST', 'GET'])
+def createInvoice():
+    print("request @createInvoice arrived...")
+    content = request.get_json()
+    response = {}
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'createInvoice')):
+        response = Main.modifyProfile(content)
+    if ('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response)
+    return json.dumps(response)
 
 @app.route('/function/setUser', methods=['POST', 'GET'])
 def setUser_route():

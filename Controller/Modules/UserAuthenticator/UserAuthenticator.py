@@ -46,6 +46,10 @@ def userIsAuthorized(user, request):
     if(user_info['type'] == 'client'):
         if(request == 'modifyProfile'):
             return True
+        elif (request == 'getQuote'):
+            return True
+        elif (request == 'createInvoice'):
+            return True
     return False
 
 def generateUserKey():

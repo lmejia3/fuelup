@@ -3,7 +3,7 @@ module responsible for deciding the pricing for different usres. It puts into ac
 transactions, trends, profit margin, and location.
 """
 
-def getQuote(user, Gallons, date):
+def getQuote(form):
     return 0.0
 
 def getTrendFactor():
