@@ -25,14 +25,14 @@ def getUserInfo(user):
     else:
         result = {}
     return result
-
+"""
 user = {'username': 'username_05', 'password': 'password_05'}
 userIsValid(user)
 user = {'username': 'username_05', 'password': 'password_06'}
 userIsValid(user)
 user = {'username': 'username_042', 'password': 'password_06'}
 userIsValid(user)
-
+"""
 def userIsAuthorized(user, request):
     tr = Tracker.getInstance()
     if(not tr.userIsActive(user['key'])):
@@ -62,14 +62,15 @@ def userIsAuthorized(user, request):
         elif (request == 'getUsersOfType'):
             return True
     return False
-
+"""
 user = {'username': 'username_05', 'password': 'password_05', 'key': '123'}
 userIsAuthorized(user, 'getQuote')
-
+"""
 def generateUserKey():
     key = ""
     for i in range(0, 256):
         key += chr(random.randint(0,255))
     return key
-
+"""
 generateUserKey();
+"""
