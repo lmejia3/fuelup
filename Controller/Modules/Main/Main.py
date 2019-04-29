@@ -20,7 +20,7 @@ def login(user):
         user['key'] = key
         response['key'] = key
         response['type'] = user['type']
-        response['id'] = user[id]
+        response['id'] = user['id']
         tracker = Tracker.getInstance()
         tracker.addUser(user)
         print(user['username'] + " successfully logged in")
