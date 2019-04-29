@@ -91,8 +91,8 @@ mod.controller('registerCtrl', function ($scope, registerService) {
                 data = response.data;
                 if ('error' in data) {
                     console.log(data.error)
-                    this.error = 'wrong'
-                    this.msg = data.error
+                    self.error = 'wrong'
+                    self.msg = data.error
                 } else {
                     console.log('registered');
                     window.location = '#!login';

@@ -76,35 +76,39 @@
                     </div>
 
                 </form>
+
+
+
                 <div ng-show="pc.quote_state == 'quote'">
-                    <div class="my-form-profile">
-                        Estimated Price: {{info.price.price}}
-                    </div>
-                    <div class="my-form-profile">
-                        Details:
-                    </div>
-                    <div class="my-form-profile">
-                        Amount: +{{q_gallons * info.price.rate}}
-                    </div>
-                    <div class="my-form-profile">
-                        Your History: -{{info.price.history * q_gallons * info.price.rate}}
-                    </div>
-                    <div class="my-form-profile">
-                        Location: +{{info.price.location * q_gallons * info.price.rate}}
-                    </div>
-                    <div class="my-form-profile">
-                        Season: +{{info.price.season * q_gallons * info.price.rate}}
-                    </div>
-                    <div class="my-form-profile">
-                        Amount Discount: +{{info.price.amount * q_gallons * info.price.rate}}
-                    </div>
-                    <div class="my-form-profile">
-                        Profit Margin: +{{info.price.profit * q_gallons * info.price.rate}}
-                    </div>
+                    <div>Estimated Price: {{info.price.price | currency:"$"}}</div>
+
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Amount</th>
+                                <th>History Discount</th>
+                                <th>Location Fee</th>
+                                <th>Season Fee</th>
+                                <th>Amount Fee</th>
+                                <th>Profit Margin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>+{{(q_gallons * info.price.rate)}}</td>
+                                <td>-{{(info.price.history * q_gallons * info.price.rate) | currency:"$"}}</td>
+                                <td>+{{(info.price.location * q_gallons * info.price.rate) | currency:"$"}}</td>
+                                <td>+{{(info.price.season * q_gallons * info.price.rate) | currency:"$"}}</td>
+                                <td>+{{(info.price.amount * q_gallons * info.price.rate) | currency:"$"}}</td>
+                                <td>+{{(info.price.profit * q_gallons * info.price.rate) | currency:"$"}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <div class="col-6">
                         <button type="submit" class="btn btn-primary my-form-submit"
-                            ng-click="pc.Order(info.price.quote_id)" ng-hide="pc.order_state == 'done'">Order Feul</button></div>
-                            <div ng-show="pc.order_state == 'done'">Order Was Placed. Invoice Was Created.</div>
+                            ng-click="pc.Order(info.price.quote_id)" ng-hide="pc.order_state == 'done'">Order
+                            Feul</button></div>
+                    <div ng-show="pc.order_state == 'done'" style="color: green">Order Was Placed. Invoice Was Created.</div>
                 </div>
             </div>
 

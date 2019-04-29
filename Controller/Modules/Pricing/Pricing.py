@@ -1,4 +1,5 @@
 from datetime import date
+from Modules.DatabaseConnector import DatabaseConnector as db
 """
 module responsible for deciding the pricing for different usres. It puts into account the history of
 transactions, trends, profit margin, and location.
@@ -26,7 +27,11 @@ def getQuote(form):
     return price
 
 def getUserHistoryFactor(user):
-
+    q = 'SELECT * FROM Invoice WHERE Username_ID = %s AND Paid = 1' \
+        % (user)
+    curProfile = db.runQuery(q)
+    if (len(curProfile) > 0):
+        return 0.01
     return 0.0
 
 def getEventFactor():

@@ -37,6 +37,9 @@ angular.module("yoFeul")
         $routeProvider.when("/agent/rates", {
             templateUrl: "views/agent_rates.html"
         });
+        $routeProvider.when("/agent/profile", {
+            templateUrl: "views/agent_profile.html"
+        });
         $routeProvider.when("/agent/transactions", {
             templateUrl: "views/agent_transactions.html"
         });
