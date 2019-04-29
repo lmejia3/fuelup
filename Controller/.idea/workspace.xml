@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3044892f-a975-4129-bf13-f56db87c1997" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Main/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Main/Main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,21 +38,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="25068" />
+          <entry key="py" value="25080" />
           <entry key="txt" value="416" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="416" />
-          <entry key="Python" value="25068" />
+          <entry key="Python" value="25080" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/router.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="377">
@@ -65,21 +65,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Modules/Main/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="251" column="30" lean-forward="true" selection-start-line="251" selection-start-column="30" selection-end-line="251" selection-end-column="30" />
+            <state relative-caret-position="363">
+              <caret line="148" column="90" selection-start-line="148" selection-start-column="90" selection-end-line="148" selection-end-column="90" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
-                <marker date="1556531886847" expanded="true" signature="1134:1139" ph="..." />
-                <marker date="1556531886847" expanded="true" signature="2436:2441" ph="..." />
-                <marker date="1556531886847" expanded="true" signature="3797:3802" ph="..." />
-                <marker date="1556531886847" expanded="true" signature="3840:4006" ph="..." />
-                <marker date="1556531886847" expanded="true" signature="4029:4034" ph="..." />
-                <marker date="1556531886847" expanded="true" signature="5326:5331" ph="..." />
-                <marker date="1556531886847" expanded="true" signature="7090:7441" ph="..." />
-                <marker date="1556531886847" expanded="true" signature="8696:9030" ph="..." />
+                <marker date="1556532092363" expanded="true" signature="1134:1139" ph="..." />
+                <marker date="1556532092363" expanded="true" signature="2436:2441" ph="..." />
+                <marker date="1556532092363" expanded="true" signature="3797:3802" ph="..." />
+                <marker date="1556532092363" expanded="true" signature="3840:4006" ph="..." />
+                <marker date="1556532092363" expanded="true" signature="4029:4034" ph="..." />
+                <marker date="1556532092363" expanded="true" signature="5326:5331" ph="..." />
+                <marker date="1556532092363" expanded="true" signature="7102:7453" ph="..." />
+                <marker date="1556532092363" expanded="true" signature="8708:9042" ph="..." />
               </folding>
             </state>
           </provider>
@@ -178,8 +178,8 @@
         <option value="$PROJECT_DIR$/Modules/Pricing/Pricing.py" />
         <option value="$PROJECT_DIR$/temp_test.py" />
         <option value="$PROJECT_DIR$/Modules/DatabaseConnector/DatabaseConnector.py" />
-        <option value="$PROJECT_DIR$/Modules/Main/Main.py" />
         <option value="$PROJECT_DIR$/router.py" />
+        <option value="$PROJECT_DIR$/Modules/Main/Main.py" />
       </list>
     </option>
   </component>
@@ -534,24 +534,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Main/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="251" column="30" lean-forward="true" selection-start-line="251" selection-start-column="30" selection-end-line="251" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-            <marker date="1556531886847" expanded="true" signature="1134:1139" ph="..." />
-            <marker date="1556531886847" expanded="true" signature="2436:2441" ph="..." />
-            <marker date="1556531886847" expanded="true" signature="3797:3802" ph="..." />
-            <marker date="1556531886847" expanded="true" signature="3840:4006" ph="..." />
-            <marker date="1556531886847" expanded="true" signature="4029:4034" ph="..." />
-            <marker date="1556531886847" expanded="true" signature="5326:5331" ph="..." />
-            <marker date="1556531886847" expanded="true" signature="7090:7441" ph="..." />
-            <marker date="1556531886847" expanded="true" signature="8696:9030" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/router.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
@@ -559,6 +541,24 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
             <marker date="1556531944690" expanded="true" signature="1259:1264" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Main/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="148" column="90" selection-start-line="148" selection-start-column="90" selection-end-line="148" selection-end-column="90" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+            <marker date="1556532092363" expanded="true" signature="1134:1139" ph="..." />
+            <marker date="1556532092363" expanded="true" signature="2436:2441" ph="..." />
+            <marker date="1556532092363" expanded="true" signature="3797:3802" ph="..." />
+            <marker date="1556532092363" expanded="true" signature="3840:4006" ph="..." />
+            <marker date="1556532092363" expanded="true" signature="4029:4034" ph="..." />
+            <marker date="1556532092363" expanded="true" signature="5326:5331" ph="..." />
+            <marker date="1556532092363" expanded="true" signature="7102:7453" ph="..." />
+            <marker date="1556532092363" expanded="true" signature="8708:9042" ph="..." />
           </folding>
         </state>
       </provider>

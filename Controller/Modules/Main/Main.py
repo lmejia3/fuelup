@@ -146,7 +146,7 @@ def getInvoices(user):
         response['error'] = 'field missing'
         return response
 
-    q = 'SELECT Number_of_Gallons, Price, Request_Delivery_Date, Delivery_Date, Paid FROM Invoice, Quote WHERE Invoice.Username_ID = "%s" AND Invoice.Quote_ID = Quote.Quote_ID' \
+    q = 'SELECT Number_of_Gallons, Price, Request_Delivery_Date, Delivery_Date, Invoice_ID, Paid FROM Invoice, Quote WHERE Invoice.Username_ID = "%s" AND Invoice.Quote_ID = Quote.Quote_ID' \
         % (user['id'])
     result = db.runQuery(q)
     return result
