@@ -13,6 +13,11 @@ has access to which functions, so it is easy it specify and modify user access t
 
 def login(user):
     response = {}
+    if ('username' not in user or 'password' not in user):
+        print('field missing')
+        response['error'] = 'field missing'
+        return response
+
     isValid = UA.userIsValid(user)
     if(isValid):
         print(user['type'])
@@ -85,6 +90,10 @@ def modifyProfile(form):
 
 def getProfile(form):
     response = {}
+    if ('id' not in form):
+        print('field missing')
+        response['error'] = 'field missing'
+        return response
     q = 'SELECT * FROM Profile_for_Users WHERE Username_ID = "%s"' \
         % (form['id'])
     curProfile = db.runQuery(q)
@@ -162,9 +171,6 @@ def getQuoteHistory(user):
         % (user['id'])
     result = db.runQuery(q)
     return result
-
-def getCurrentEvent():
-    return ""
 
 def getRequestList(user):
     response = {}

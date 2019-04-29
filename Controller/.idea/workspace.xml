@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3044892f-a975-4129-bf13-f56db87c1997" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Main/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Main/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_cov.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_cov.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,26 +29,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="58" />
+          <entry key="py" value="62" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="58" />
+          <entry key="Python" value="62" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="25108" />
+          <entry key="py" value="25729" />
           <entry key="txt" value="416" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="416" />
-          <entry key="Python" value="25108" />
+          <entry key="Python" value="25729" />
         </counts>
       </usages-collector>
     </session>
@@ -57,10 +58,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/router.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="29" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
                 <marker date="1556532429329" expanded="true" signature="1259:1264" ph="..." />
               </folding>
             </state>
@@ -68,10 +68,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_cov.py">
+        <entry file="file://$PROJECT_DIR$/demo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="272">
+              <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,18 +82,18 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/Main/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            <state relative-caret-position="357">
+              <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
-                <marker date="1556532380142" expanded="true" signature="1134:1139" ph="..." />
-                <marker date="1556532380142" expanded="true" signature="2436:2441" ph="..." />
-                <marker date="1556532380142" expanded="true" signature="3797:3802" ph="..." />
-                <marker date="1556532380142" expanded="true" signature="3840:4006" ph="..." />
-                <marker date="1556532380142" expanded="true" signature="4029:4034" ph="..." />
-                <marker date="1556532380142" expanded="true" signature="5326:5331" ph="..." />
-                <marker date="1556532380142" expanded="true" signature="6245:6544" ph="..." />
-                <marker date="1556532380142" expanded="true" signature="7450:7786" ph="..." />
+                <marker date="1556534766282" expanded="true" signature="1293:1298" ph="..." />
+                <marker date="1556534766282" expanded="true" signature="2595:2600" ph="..." />
+                <marker date="1556534766282" expanded="true" signature="3956:3961" ph="..." />
+                <marker date="1556534766282" expanded="true" signature="3999:4291" ph="..." />
+                <marker date="1556534766282" expanded="true" signature="4314:4319" ph="..." />
+                <marker date="1556534766282" expanded="true" signature="5611:5616" ph="..." />
+                <marker date="1556534766282" expanded="true" signature="6530:6828" ph="..." />
+                <marker date="1556534766282" expanded="true" signature="7697:8033" ph="..." />
               </folding>
             </state>
           </provider>
@@ -137,9 +140,12 @@
         <option value="$PROJECT_DIR$/Modules/Pricing/Pricing.py" />
         <option value="$PROJECT_DIR$/temp_test.py" />
         <option value="$PROJECT_DIR$/Modules/DatabaseConnector/DatabaseConnector.py" />
-        <option value="$PROJECT_DIR$/Modules/Main/Main.py" />
         <option value="$PROJECT_DIR$/router.py" />
+        <option value="$PROJECT_DIR$/test/demostration.py" />
+        <option value="$PROJECT_DIR$/test/demo.py" />
         <option value="$PROJECT_DIR$/test_cov.py" />
+        <option value="$PROJECT_DIR$/Modules/Main/Main.py" />
+        <option value="$PROJECT_DIR$/demo.py" />
       </list>
     </option>
   </component>
@@ -184,6 +190,9 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WorkStation\College\COSC4353\getyofuel\Controller\test" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WorkStation\College\COSC4353\getyofuel\Controller\Modules\DatabaseConnector" />
       <recent name="D:\WorkStation\College\COSC4353\getyofuel\Controller\Modules\Main" />
@@ -204,7 +213,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.demo">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Controller" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -247,28 +256,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="UserAuthenticator" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Controller" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Modules/UserAuthenticator" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Modules/UserAuthenticator/UserAuthenticator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="router" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Controller" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -280,7 +268,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/router.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/demo.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -310,20 +298,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in test_cov.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Controller" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_cov.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.UserAuthenticator" />
       <item itemvalue="Python.Main" />
-      <item itemvalue="Python.router" />
       <item itemvalue="Python.Pricing" />
       <item itemvalue="Python.temp_test" />
+      <item itemvalue="Python tests.pytest in test_cov.py" />
+      <item itemvalue="Python.demo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.demo" />
+        <item itemvalue="Python tests.pytest in test_cov.py" />
         <item itemvalue="Python.Main" />
         <item itemvalue="Python.temp_test" />
         <item itemvalue="Python.Pricing" />
-        <item itemvalue="Python.router" />
-        <item itemvalue="Python.UserAuthenticator" />
       </list>
     </recent_temporary>
   </component>
@@ -339,6 +342,11 @@
       <updated>1552801433368</updated>
     </task>
     <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="pytest_in_test_cov_py - 2019.04.29 at 05h 25m 42s.xml">
+      <configuration name="pytest in test_cov.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
@@ -438,16 +446,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="141" selection-start-line="141" selection-end-line="141" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/Pricing/Pricing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -491,39 +489,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Main/Main.py">
+    <entry file="file://$PROJECT_DIR$/test/demostration.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="24" column="29" lean-forward="true" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-            <marker date="1556532380142" expanded="true" signature="1134:1139" ph="..." />
-            <marker date="1556532380142" expanded="true" signature="2436:2441" ph="..." />
-            <marker date="1556532380142" expanded="true" signature="3797:3802" ph="..." />
-            <marker date="1556532380142" expanded="true" signature="3840:4006" ph="..." />
-            <marker date="1556532380142" expanded="true" signature="4029:4034" ph="..." />
-            <marker date="1556532380142" expanded="true" signature="5326:5331" ph="..." />
-            <marker date="1556532380142" expanded="true" signature="6245:6544" ph="..." />
-            <marker date="1556532380142" expanded="true" signature="7450:7786" ph="..." />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/demo.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/router.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="29" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
             <marker date="1556532429329" expanded="true" signature="1259:1264" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_cov.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="2332">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Main/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="16" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+            <marker date="1556534766282" expanded="true" signature="1293:1298" ph="..." />
+            <marker date="1556534766282" expanded="true" signature="2595:2600" ph="..." />
+            <marker date="1556534766282" expanded="true" signature="3956:3961" ph="..." />
+            <marker date="1556534766282" expanded="true" signature="3999:4291" ph="..." />
+            <marker date="1556534766282" expanded="true" signature="4314:4319" ph="..." />
+            <marker date="1556534766282" expanded="true" signature="5611:5616" ph="..." />
+            <marker date="1556534766282" expanded="true" signature="6530:6828" ph="..." />
+            <marker date="1556534766282" expanded="true" signature="7697:8033" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
