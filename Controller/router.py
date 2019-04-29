@@ -141,7 +141,7 @@ def getInvoices_route():
             response = Main.getInvoices(content)
         if ('error' in content):
             response['error'] = content['error']
-            return json.dumps(response)
+            return json.dumps(response, indent=4, sort_keys=True, default=str)
         return json.dumps(response)
 
 @app.route('/function/getQuotes', methods=['POST', 'GET'])
@@ -153,7 +153,7 @@ def getQuotes_route():
             response = Main.getQuoteHistory(content)
         if ('error' in content):
             response['error'] = content['error']
-            return json.dumps(response)
+            return json.dumps(response, indent=4, sort_keys=True, default=str)
         return json.dumps(response)
 
 @app.route('/function/getCurrentEvent', methods=['POST', 'GET'])
