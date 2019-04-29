@@ -90,8 +90,16 @@ def getProfile(form):
     curProfile = db.runQuery(q)
     return curProfile
 
-def processOrder(user, order):
-    return False
+def processOrder(form):
+    response = {}
+    if ('invoice_id' not in form or 'date' not in form or 'username' not in form):
+        print('field missing')
+        response['error'] = 'field missing'
+        return response
+
+    db.runInsertQuery('INSERT INTO Quote (Username_ID, Number_of_Gallons, Price, Request_Date, Request_Delivery_Date) VALUES (%s, %s, %s, "%s", "%s")' \
+                     % (form['id'], form['gallons'], form['date']))
+    return response
 
 def getQuote(form):
     response = {}
@@ -193,11 +201,11 @@ def getRequestList(user):
         response['error'] = 'field missing'
         return response
 
-    q = 'SELECT * FROM Quote WHERE Username_ID = "%s"' \
-        % (user['id'])
+    q = 'SELECT * FROM Quote, Invoice, Profile_for_Users WHERE Invoice.Username_ID = Profile_for_Users.Username_ID AND Invoice.Quote_ID = Quote.Quote_ID AND Invoice.Delivery_Date IS NULL'
     result = db.runQuery(q)
     return result
-    return ""
+
+print(getRequestList({'username': 0, 'id': 0}))
 
 def getTrends(bounds):
     return ""

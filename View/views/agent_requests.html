@@ -6,7 +6,34 @@
             <div class="my-div-marg"><a href="#!agent/transactions" class="text-white">Transactions</a></div>
         </div>
         <div class="my-user-content col-11">
-            Requests
+            <div class="container" style="margin: 0px;" ng-controller="requestCtrl as rc">
+                <h2 class="text-black" style="padding-left: 12px">Quote History</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Invoice ID</th>
+                            <th>Client Company</th>
+                            <th>Request Delivery Date</th>
+                            <th>Amount In Gallons</th>
+                            <th>Deliver</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in info.requests">
+                            <td>{{item.Invoice_ID}}</td>
+                            <td>{{item.Company_Name}}</td>
+                            <td>{{item.Request_Delivery_Date}}</td>
+                            <td>{{item.Number_of_Gallons}}</td>
+                            <td>
+                                <button type="submit" class="btn btn-primary my-form-submit"
+                                    ng-click="rc.Process(item.Invoice_ID)">Order
+                                    Feul</button>
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
         </div>
     </div>
+</div>
 </div>

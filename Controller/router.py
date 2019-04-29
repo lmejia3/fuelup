@@ -63,9 +63,15 @@ def modifyProfile_route():
 
 @app.route('/function/processOrder', methods=['POST', 'GET'])
 def processOrder_route():
-    print("request @login arrived...")
+    print("request @processOrder arrived...")
     content = request.get_json()
-    return 'connected to processOrder'
+    response = {}
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'processOrder')):
+        response = Main.processOrder(content)
+    if ('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response, default=str)
+    return json.dumps(response, default=str)
 
 @app.route('/function/getQuote', methods=['POST', 'GET'])
 def getQuote_route():

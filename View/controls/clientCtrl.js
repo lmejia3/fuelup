@@ -187,7 +187,7 @@ mod.controller('profileCtrl', function ($scope, requestService, loginService) {
     }
     this.order_state = 'initial';
     this.Order = function (id) {
-        var promise = s('createInvoice', {'quote_id': id});
+        var promise = s('createInvoice', { 'quote_id': id });
         console.log(id);
         promise.then(
             function (response) {
@@ -269,5 +269,59 @@ mod.controller('historyCtrl', function ($scope, requestService, loginService) {
     }
 
     this.getQuotes();
+
+});
+
+mod.controller('requestCtrl', function ($scope, requestService) {
+    var self = this;
+    var send = requestService.send;
+
+    this.getRequests = function () {
+
+        var promise = send('getRequestList', {});
+
+        promise.then(
+            function (response) {
+                console.log('successful response');
+                console.log(response);
+                data = response.data;
+                if ('error' in data) {
+                    console.log(data.error)
+                } else {
+                    console.log('requests were recieved.');
+                    $scope.info.requests = data;
+                }
+            },
+            function (response) {
+                console.log('failed response');
+                console.log(response);
+            }
+        );
+    }
+
+    this.getRequests();
+
+    this.Process = function (id, date) {
+
+        var promise = send('processOrder', {'invoice_id':id,'date':date});
+
+        promise.then(
+            function (response) {
+                console.log('successful response');
+                console.log(response);
+                data = response.data;
+                if ('error' in data) {
+                    console.log(data.error)
+                } else {
+                    console.log('process response were recieved.');
+                    $scope.info.requests = data;
+                }
+            },
+            function (response) {
+                console.log('failed response');
+                console.log(response);
+            }
+        );
+    }
 
 });
