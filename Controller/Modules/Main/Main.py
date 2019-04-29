@@ -123,8 +123,16 @@ def getQuote(form):
 
     price = PR.getQuote(form)
     today = str(date.today())
+
     response['price'] = price
     response['today'] = today
+    response['price'] = form['price']
+    response['history'] = form['history']
+    response['season'] = form['season']
+    response['location'] = form['location']
+    response['amount'] = form['amount']
+    response['profit'] = form['profit']
+    response['rate'] = form['rate']
 
     db.runInsertQuery('INSERT INTO Quote (Username_ID, Number_of_Gallons, Price, Request_Date, Request_Delivery_Date) VALUES (%s, %s, %s, "%s", "%s")' \
                      % (form['id'], form['gallons'], price, today, form['date']))

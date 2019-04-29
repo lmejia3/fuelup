@@ -94,6 +94,7 @@ mod.controller('registerCtrl', function ($scope, registerService) {
 });
 
 mod.controller('profileCtrl', function ($scope, requestService, loginService) {
+    var self = this;
     var s = requestService.send;
     this.send = function (first, last, company, add1, add2, city, state, zip) {
         var reqdata = {
@@ -156,6 +157,8 @@ mod.controller('profileCtrl', function ($scope, requestService, loginService) {
 
     this.getProfile();
 
+    this.quote_state = 'initial';
+
     this.getQuote = function (gallons, date, state) {
         var promise = s('getQuote', { 'gallons': gallons, 'date': date, 'state': state});
 
@@ -169,6 +172,7 @@ mod.controller('profileCtrl', function ($scope, requestService, loginService) {
                 } else {
                     console.log('quote was recieved.');
                     $scope.info.price = data;
+                    self.quote_state = 'quote';
                 }
             },
             function (response) {

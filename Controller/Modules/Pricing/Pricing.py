@@ -15,6 +15,14 @@ def getQuote(form):
     price = (form['gallons'] * rate)*(loc - hist + amm + prof + event + 1)
     print('quote: ' + str(price))
 
+    form['price'] = price
+    form['history'] = hist
+    form['season'] = event
+    form['location'] = loc
+    form['amount'] = amm
+    form['profit'] = prof
+    form['rate'] = rate
+
     return price
 
 def getUserHistoryFactor(user):
