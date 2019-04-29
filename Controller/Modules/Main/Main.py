@@ -63,8 +63,8 @@ def registerUser(user):
 def modifyProfile(form):
     print(form)
     response = {}
-    if('username' not in form or 'lastname' not in form, 'company' not in form, 'address1' not in form,\
-       'city' not in form, 'state' not in form, 'zipcode' not in form, 'firstname' not in form):
+    if('username' not in form or 'lastname' not in form or 'company' not in form or 'address1' not in form or\
+       'city' not in form or 'state' not in form or 'zipcode' not in form or 'firstname' not in form):
         print('field missing.')
         response['error'] = "field missing."
         return response
