@@ -8,6 +8,7 @@ mod.factory('loginService', function ($http, server_url) {
     info.password = null;
     info.key = null;
     info.loggedIn = false;
+    info.type = null;
 
     info.login = function (user, pass) {
         user = 'username_01'
@@ -49,6 +50,9 @@ mod.factory('requestService', function ($http, server_url, loginService){
     
     info.send = function(req_name, data_j){
         data_j.key = loginService.key;
+        data_j.password = loginService.password;
+        data_j.username = loginService.username;
+        data_j.id = loginService.id;
         var req = {
             method: 'POST',
             dataType: 'json',

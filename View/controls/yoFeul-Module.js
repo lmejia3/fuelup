@@ -5,4 +5,6 @@ angular.module("yoFeul",["ngRoute"])
         $scope.updateName = function(){
             $scope.username= loginService.username;
         }
+
+        $scope.info = [];
     })

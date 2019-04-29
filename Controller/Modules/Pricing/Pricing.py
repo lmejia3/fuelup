@@ -41,4 +41,4 @@ def getLocationFactor(state):
 
 def getProfitMargin():
 
-    return 0.0
+    return 0.1

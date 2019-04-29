@@ -104,12 +104,14 @@ def modifyProfile(form):
     response['status'] = 'updated'
     return response
 
-def getProfile(user):
+def getProfile(form):
     response = {}
+    q = 'SELECT * FROM Profile_for_Users WHERE Username_ID = "%s"' \
+        % (form['id'])
+    curProfile = db.runQuery(q)
+    return curProfile
 
-
-
-    return response
+print(getProfile({'id' : 1}))
 
 def processOrder(user, order):
     return False

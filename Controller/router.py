@@ -90,6 +90,18 @@ def createInvoice_route():
         return json.dumps(response)
     return json.dumps(response)
 
+@app.route('/function/getProfile', methods=['POST', 'GET'])
+def getProfile_route():
+    print("request @getProfile arrived...")
+    content = request.get_json()
+    response = {}
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'getProfile')):
+        response = Main.getProfile(content)
+    if ('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response)
+    return json.dumps(response)
+
 @app.route('/function/setUser', methods=['POST', 'GET'])
 def setUser_route():
     print("request @login arrived...")
