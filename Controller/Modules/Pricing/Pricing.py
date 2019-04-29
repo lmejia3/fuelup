@@ -10,10 +10,10 @@ def getQuote(form):
     basepath = path.dirname(__file__)
     filepath = path.abspath(path.join(basepath, "rate.txt"))
     fd = open(filepath, 'r')
-    sqlFile = str(fd.readline())
+    sqlFile = fd.readline()
     fd.close()
 
-    rate = float(fd)
+    rate = 1.5
     hist = getUserHistoryFactor(form['id'])
     event = getEventFactor()
     loc = getLocationFactor(form['state'])
