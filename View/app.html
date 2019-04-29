@@ -26,8 +26,8 @@
         <span class="navbar-brand float-left col-4 text-light">Yo Feul</span>
         <span class="nav-pills col-7">
             <a href="#!login" class="float-right text-white col-2">{{username}}</a>
-            <a href="#" class="float-right text-white col-2">Home</a>
-            <a href="#!about" class="float-right text-white col-2">About</a>
+            <a href="#" class="float-right text-white col-2" ng-hide="loggedIn == true">Home</a>
+            <a href="#!about" class="float-right text-white col-2" ng-hide="loggedIn == true">About</a>
         </span>
     </div>
 

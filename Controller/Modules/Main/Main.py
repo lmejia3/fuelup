@@ -111,6 +111,8 @@ def getProfile(form):
     curProfile = db.runQuery(q)
     return curProfile
 
+print(getProfile({'id' : 1}))
+
 def processOrder(user, order):
     return False
 
@@ -205,7 +207,11 @@ def getQuoteHistory(user):
     q = 'SELECT * FROM Quote WHERE Username_ID = "%s"' \
         % (user['id'])
     result = db.runQuery(q)
+    for i in range(0, len(result)):
+        result[i]['Price'] = float (result[i]['Price'])
     return result
+
+print(getQuoteHistory({'username': '1', 'id':1}))
 
 def getCurrentEvent():
     return ""
