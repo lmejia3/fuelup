@@ -111,8 +111,6 @@ mod.controller('profileCtrl', function ($scope, requestService, loginService) {
             'city': (city == undefined) ? null : city,
             'state': (state == undefined) ? null : state,
             'zipcode': (zip == undefined) ? 00000 : zip,
-            'key': loginService.key,
-            'username': loginService.username
         }
         console.log(reqdata)
         var rs = requestService;

@@ -60,31 +60,9 @@ def registerUser(user):
     response['status'] = 'added'
     return response
 
-"""
-user = {'username': 'hello@hi.com', 'password': 'oioi'}
-registerUser(user)
-user = {'password': 'oioi'}
-registerUser(user)
-user = {'username': 'hello@hi.com', 'password': ''}
-registerUser(user)
-user = {'username': 'username_01', 'password': 'oioi'}
-registerUser(user)
-user = {'username': 'username_43', 'password': 'oioi'}
-registerUser(user)
-user = {'username': 'username_41', 'password': 'oioi'}
-registerUser(user)
-user = {'username': 'blah@hi.com', 'password': 'oioi'}
-registerUser(user)
-user = {'username': 'blah@hi.com', 'password': 'oioi'}
-registerUser(user)
-user = {'username': 'blah@hi.com', 'password': 'oioi'}
-registerUser(user)
-login(user)
-"""
-
 def modifyProfile(form):
     response = {}
-    if('username' not in form or 'lastname' not in form, 'company' not in form, 'address1' not in form, 'address2' not in form, \
+    if('username' not in form or 'lastname' not in form, 'company' not in form, 'address1' not in form,\
        'city' not in form, 'state' not in form, 'zipcode' not in form, 'firstname' not in form):
         print('field missing.')
         response['error'] = "field missing."
@@ -173,9 +151,7 @@ def getAllUsers():
         dataobj[i] = result[i]
     response['invoices'] = dataobj;
     return response
-"""
-getAllUsers()
-"""
+
 def getUsersOfType(t):
     response = {}
     if (type(t) != type("str")):
@@ -208,53 +184,41 @@ def getQuoteHistory(user):
 
 def getCurrentEvent():
     return ""
-"""
-getCurrentEvent()
-"""
-def getRequestList():
+
+def getRequestList(user):
+    response = {}
+    if ('username' not in user or 'id' not in user):
+        print('field missing')
+        response['error'] = 'field missing'
+        return response
+
+    q = 'SELECT * FROM Quote WHERE Username_ID = "%s"' \
+        % (user['id'])
+    result = db.runQuery(q)
+    return result
     return ""
-"""
-getRequestList()
-"""
+
 def getTrends(bounds):
     return ""
-"""
-getTrends(1)
-"""
+
 def getProfitMargin(type):
     return 0.0
-"""
-getProfitMargin(1)
-"""
 
 def setProfitMargin():
     return False
-"""
-setProfitMargin()
-"""
+
 def setUser(user):
 
     return False
-"""
-setUser(1)
-"""
+
 def unregisterUser(user):
     return False
-"""
-unregisterUser(1)
-"""
+
 def removeUser(user):
     return False
-"""
-removeUser(1)
-"""
+
 def getTransactionHistory(user, bounds):
     return ""
-"""
-getTransactionHistory(1,1)
-"""
+
 def getAllTransactionHistory(user):
     return ""
-"""
-getAllTransactionHistory(1)
-"""

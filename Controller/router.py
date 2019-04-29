@@ -166,9 +166,15 @@ def getCurrentEvent_route():
 
 @app.route('/function/getRequestList', methods=['POST', 'GET'])
 def getRequestList_route():
-    print("request @login arrived...")
+    print("request @getRequestList arrived...")
     content = request.get_json()
-    return 'connected to getRequestList'
+    response = {}
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'getRequestList')):
+        response = Main.getRequestList(content)
+    if ('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response, default=str)
+    return json.dumps(response, default=str)
 
 @app.route('/function/getTrends', methods=['POST', 'GET'])
 def getTrends_route():
