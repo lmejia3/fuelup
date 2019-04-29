@@ -29,9 +29,3 @@ def getData(SELECT, FROM, WHERE = ""):
         q += " WHERE " + WHERE
     return runQuery(q)
 
-"""
-q = "SELECT * FROM Login_Info"
-data = runQuery(q)
-print(data)
-"""
-
