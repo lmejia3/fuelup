@@ -189,8 +189,8 @@ mod.controller('profileCtrl', function ($scope, requestService, loginService) {
     }
     this.order_state = 'initial';
     this.Order = function (id) {
-        var promise = s('createInvoice', {'quote_id':id});
-
+        var promise = s('createInvoice', {'quote_id': id});
+        console.log(id);
         promise.then(
             function (response) {
                 console.log('successful response');
