@@ -7,7 +7,29 @@
             <div class="my-div-marg"><a class="text-warning">View Invoices</a></div>
         </div>
         <div class="my-user-content col-11" ng-controller="invoiceCtrl as ic">
-            User View Invoices Page
+            <div class="container" style="margin: 0px;" ng-controller="clientCtrl">
+                <h2 class="text-black" style="padding-left: 12px">Invoices</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Amount In Gallons</th>
+                            <th>Requested Date</th>
+                            <th>Delivery Date</th>
+                            <th>Price</th>
+                            <th>Payed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="quote in model">
+                            <td>{{quote.rdate}}</td>
+                            <td>{{quote.ddate}}</td>
+                            <td>{{quote.gallons}}</td>
+                            <td>{{quote.price | currency:"$"}}</td>
+                            <td>{{quote.paid}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
