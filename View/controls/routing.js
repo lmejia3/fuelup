@@ -28,6 +28,18 @@ angular.module("yoFeul")
         $routeProvider.when("/about", {
             templateUrl: "views/about.html"
         });
+        $routeProvider.when("/user/quote/received", {
+            templateUrl: "views/user_quote_reciept.html"
+        });
+        $routeProvider.when("/agent/requests", {
+            templateUrl: "views/agent_requests.html"
+        });
+        $routeProvider.when("/agent/rates", {
+            templateUrl: "views/agent_rates.html"
+        });
+        $routeProvider.when("/agent/transactions", {
+            templateUrl: "views/agent_transactions.html"
+        });
         $routeProvider.otherwise({
             templateUrl: "views/login.html"
         });

@@ -3,12 +3,15 @@ var mod = angular.module("yoFeul")
 mod.factory('loginService', function ($http, server_url) {
     var info = {};
 
+    info.id = null;
     info.username = null;
     info.password = null;
     info.key = null;
     info.loggedIn = false;
 
     info.login = function (user, pass) {
+        user = 'username_01'
+        pass = 'password_01'
         var req = {
             method: 'POST',
             dataType: 'json',
@@ -45,6 +48,7 @@ mod.factory('requestService', function ($http, server_url, loginService){
 
     
     info.send = function(req_name, data_j){
+        data_j.key = loginService.key;
         var req = {
             method: 'POST',
             dataType: 'json',

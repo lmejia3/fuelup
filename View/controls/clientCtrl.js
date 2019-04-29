@@ -38,9 +38,11 @@ mod.controller("loginCtrl", function($scope, loginService){
                     console.log("IM HERE: " + lg.username);
                     lg.password = pass;
                     lg.key = data.key
+                    lg.id = data.id
                     lg.loggedIn = true;
                     $scope.updateName();
-                    window.location = '#!user/profile';
+                    
+                    window.location = '#!user/history';
                 }
             },
             function (response) {

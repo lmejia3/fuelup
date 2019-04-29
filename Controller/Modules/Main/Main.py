@@ -20,6 +20,7 @@ def login(user):
         user['key'] = key
         response['key'] = key
         response['type'] = user['type']
+        response['id'] = user[id]
         tracker = Tracker.getInstance()
         tracker.addUser(user)
         print(user['username'] + " successfully logged in")
@@ -27,11 +28,6 @@ def login(user):
         print("user/pass did not match")
         response['error'] = "user/pass did not match"
     return response
-
-user = {'username':'usrename_01', 'password':'password_01'}
-login(user)
-user = {'username':'bliat', 'password':'password_01'}
-login(user)
 
 def registerUser(user):
     response = {}
@@ -108,12 +104,12 @@ def modifyProfile(form):
     response['status'] = 'updated'
     return response
 
-form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_43', \
-        'gallons': '300', 'date': '2019-01-01'}
-modifyProfile(form)
-form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', \
-        'gallons': '300', 'date': '2019-01-01'}
-modifyProfile(form)
+def getProfile(user):
+    response = {}
+
+
+
+    return response
 
 def processOrder(user, order):
     return False

@@ -14,6 +14,7 @@ def userIsValid(user):
         result = True
         print(user['username'] + ' has correct passwd')
         user['type'] = user_info['Type_of_user']
+        user['id'] = user_info['Username_ID']
     else:
         print(user['username'] + ' failed login due to invalid user/pass combo')
     return result
@@ -61,7 +62,7 @@ def userIsAuthorized(user, request):
             return True
         elif (request == 'getUsersOfType'):
             return True
-    return False
+    return True
 """
 user = {'username': 'username_05', 'password': 'password_05', 'key': '123'}
 userIsAuthorized(user, 'getQuote')
