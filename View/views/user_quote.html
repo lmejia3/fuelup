@@ -20,7 +20,7 @@
                             <label class="my-form-label">Gallons:</label>
                         </div>
                         <div class="col-3">
-                            <input type="text" id="gallons" class="form-control my-form-user" placeholder="Gallons"
+                            <input type="number" id="gallons" class="form-control my-form-user" placeholder="Gallons"
                                 name="gallons" ng-model="q_gallons">
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                     <div class="form-group row">
                         <div class="col-6">
                             <button type="submit" class="btn btn-primary my-form-submit"
-                                ng-click="pc.getQuote(q_gallons,q_date)">Get Quote</button></div>
+                                ng-click="pc.getQuote(q_gallons,q_date,info.profile.State)">Get Quote</button></div>
                     </div>
 
                 </form>

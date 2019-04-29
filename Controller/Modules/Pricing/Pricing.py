@@ -13,7 +13,7 @@ def getQuote(form):
     prof = getProfitMargin()
 
     price = (form['gallons'] * rate)*(loc - hist + amm + prof + event + 1)
-    print('quote: ' + price)
+    print('quote: ' + str(price))
 
     return price
 

@@ -156,8 +156,8 @@ mod.controller('profileCtrl', function ($scope, requestService, loginService) {
 
     this.getProfile();
 
-    this.getQuote = function (gallons, date) {
-        var promise = s('getQuote', { 'gallons': gallons, 'date': date});
+    this.getQuote = function (gallons, date, state) {
+        var promise = s('getQuote', { 'gallons': gallons, 'date': date, 'state': state});
 
         promise.then(
             function (response) {
