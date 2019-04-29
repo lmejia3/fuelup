@@ -6,12 +6,16 @@ transactions, trends, profit margin, and location.
 
 def getQuote(form):
     rate = 1.5
-    hist = getUserHistoryFactor(1)
+    hist = getUserHistoryFactor(form['id'])
     event = getEventFactor()
     loc = getLocationFactor(form['state'])
     amm = getAmountFactor(form['gallons'])
+    prof = getProfitMargin()
 
-    return 0.0
+    price = (form['gallons'] * rate)*(loc - hist + amm + prof + event + 1)
+    print('quote: ' + price)
+
+    return price
 
 def getUserHistoryFactor(user):
 

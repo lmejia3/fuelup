@@ -18,24 +18,24 @@
                     <div class="form-group row">
                         <div class="col-6">
                             <input type="text" id="firstname" class="form-control my-form-user" placeholder="firstname"
-                                name="firstname" ng-model="first">
+                                name="firstname" ng-model="info.profile.First_Name">
                         </div>
 
                         <div class="col-6">
                             <input type="text" id="lastname" class="form-control my-form-user" placeholder="lastname"
-                                name="lastname" ng-model="last">
+                                name="lastname" ng-model="info.profile.Last_Name">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-12">
                             <input type="text" id="Company" class="form-control my-form-user" placeholder="company name"
-                                name="Company" ng-model="company">
+                                name="Company" ng-model="info.profile.Company_Name">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-12">
                             <input type="text" id="Address1" class="form-control my-form-user" placeholder="Address1"
-                                name="Address1" ng-model="add1">
+                                name="Address1" ng-model="info.profile.Address">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -47,10 +47,10 @@
                     <div class="form-group row">
                         <div class="col-2">
                             <input type="text" id="City" class="form-control my-form-user" placeholder="City"
-                                name="City" ng-model="city">
+                                name="City" ng-model="info.profile.City">
                         </div>
                         <div class="col-2">
-                            <select class="form-control my-form-user" ng-model="state">
+                            <select class="form-control my-form-user" ng-model="info.profile.State">
                                 <option value="AL">AL</option>
                                 <option value="AK">AK</option>
                                 <option value="AR">AR</option>
@@ -106,12 +106,14 @@
                         </div>
                         <div class="col-3">
                             <input type="text" id="Zipcode" class="form-control my-form-user" placeholder="Zipcode"
-                                name="Zipcode" ng-model="zip">
+                                name="Zipcode" ng-model="info.profile.Zipcode">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-6">
-                            <button type="button" class="btn btn-primary my-form-submit" ng-click="pc.send(first, last, company, add1, add2, city, state, zip)">Save</button></div>
+                            <button type="button" class="btn btn-primary my-form-submit"
+                                ng-click="pc.send(info.profile.First_Name,info.profile.Last_Name,info.profile.Company_Name, info.profile.Address, add2, info.profile.City, info.profile.State, info.profile.Zipcode)">Save</button>
+                        </div>
                     </div>
 
                 </form>

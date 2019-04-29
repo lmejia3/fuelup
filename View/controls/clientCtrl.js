@@ -14,6 +14,8 @@ var mod = angular.module("yoFeul")
 
 mod.controller("loginCtrl", function ($scope, loginService) {
     this.login = function (user, pass) {
+        user = 'username_01'
+        pass = 'password_01'
         if (user == undefined) {
 
             return;
@@ -142,7 +144,7 @@ mod.controller('profileCtrl', function ($scope, requestService, loginService) {
                     console.log(data.error)
                 } else {
                     console.log('profile info recieved.');
-                    $scope.info.profile = data;
+                    $scope.info.profile = data[0];
                 }
             },
             function (response) {
@@ -152,6 +154,29 @@ mod.controller('profileCtrl', function ($scope, requestService, loginService) {
         );
     }
 
+    this.getProfile();
+
+    this.getQuote = function (gallons, date) {
+        var promise = s('getQuote', { 'gallons': gallons, 'date': date});
+
+        promise.then(
+            function (response) {
+                console.log('successful response');
+                console.log(response);
+                data = response.data;
+                if ('error' in data) {
+                    console.log(data.error)
+                } else {
+                    console.log('quote was recieved.');
+                    $scope.info.price = data;
+                }
+            },
+            function (response) {
+                console.log('failed response');
+                console.log(response);
+            }
+        );
+    }
 
 });
 

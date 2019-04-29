@@ -11,8 +11,6 @@ mod.factory('loginService', function ($http, server_url) {
     info.type = null;
 
     info.login = function (user, pass) {
-        user = 'username_01'
-        pass = 'password_01'
         var req = {
             method: 'POST',
             dataType: 'json',

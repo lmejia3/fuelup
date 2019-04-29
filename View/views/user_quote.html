@@ -6,7 +6,7 @@
             <div class="my-div-marg"><a class="text-warning">Get Quote</a></div>
             <div class="my-div-marg"><a href="#!user/invoices" class="text-white">View Invoices</a></div>
         </div>
-        <div class="my-user-content col-11">
+        <div class="my-user-content col-11" ng-controller="profileCtrl as pc">
 
             <div class="container" style="margin: 0px;">
                 <form class="form-horizontal my-form-profile" id="form-profile" style="background: white; color:black;">
@@ -21,7 +21,7 @@
                         </div>
                         <div class="col-3">
                             <input type="text" id="gallons" class="form-control my-form-user" placeholder="Gallons"
-                                name="gallons">
+                                name="gallons" ng-model="q_gallons">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -32,7 +32,7 @@
                     <div class="form-group row">
                         <div class="col-12">
                             <input type="text" id="Address1" class="form-control my-form-user" placeholder="Address1"
-                                name="Address1" disabled>
+                                name="Address1" ng-model="info.profile.Address" disabled>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -44,15 +44,15 @@
                     <div class="form-group row">
                         <div class="col-2">
                             <input type="text" id="City" class="form-control my-form-user" placeholder="City"
-                                name="City" disabled>
+                                name="City" ng-model="info.profile.City" disabled>
                         </div>
                         <div class="col-2">
                             <input type="text" id="State" class="form-control my-form-user" placeholder="State"
-                                name="State" disabled>
+                                name="State" ng-model="info.profile.State" disabled>
                         </div>
                         <div class="col-3">
                             <input type="text" id="Zipcode" class="form-control my-form-user" placeholder="Zipcode"
-                                name="Zipcode" disabled>
+                                name="Zipcode" ng-model="info.profile.Zipcode" disabled>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -66,12 +66,13 @@
                         </div>
                         <div class="col-4">
                             <input type="date" id="date" class="form-control my-form-user" placeholder="date"
-                                name="date">
+                                name="date" ng-model="q_date">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-6">
-                            <button type="submit" class="btn btn-primary my-form-submit">Get Quote</button></div>
+                            <button type="submit" class="btn btn-primary my-form-submit"
+                                ng-click="pc.getQuote(q_gallons,q_date)">Get Quote</button></div>
                     </div>
 
                 </form>

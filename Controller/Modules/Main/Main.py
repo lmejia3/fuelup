@@ -111,8 +111,6 @@ def getProfile(form):
     curProfile = db.runQuery(q)
     return curProfile
 
-print(getProfile({'id' : 1}))
-
 def processOrder(user, order):
     return False
 
@@ -128,16 +126,15 @@ def getQuote(form):
     response['price'] = price
     response['today'] = today
 
-    id = db.runQuery('SELECT Username_ID FROM Login_Info WHERE Username = "%s"' \
-                     % (form['username']))[0]['Username_ID']
     db.runInsertQuery('INSERT INTO Quote (Username_ID, Number_of_Gallons, Price, Request_Date, Request_Delivery_Date) VALUES (%s, %s, %s, "%s", "%s")' \
-                     % (id, form['gallons'], price, today, form['date']))
+                     % (form['id'], form['gallons'], price, today, form['date']))
 
     return response
 """
 form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_43', \
         'gallons': '300', 'date': '2019-01-01'}
 getQuote(form)
+
 form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', \
         'gallons': '300', 'date': '2019-01-01'}
 getQuote(form)
@@ -208,10 +205,12 @@ def getUsersOfType(t):
         dataobj[i] = result[i]
     response['invoices'] = dataobj;
     return response
+
 """
 getUsersOfType('agent')
 getUsersOfType(1)
 """
+
 def getCurrentEvent():
     return ""
 """
