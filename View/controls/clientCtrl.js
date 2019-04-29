@@ -409,7 +409,7 @@ mod.controller('rateCtrl', function ($scope, requestService, loginService) {
                     console.log(data.error)
                 } else {
                     console.log('rate was recieved.');
-                    $scope.info.rate = data['rate'];
+                    $scope.info.rate = parseFloat(data['rate']);
                 }
             },
             function (response) {

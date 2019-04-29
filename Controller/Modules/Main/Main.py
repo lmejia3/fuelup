@@ -4,7 +4,7 @@ from Modules.DatabaseConnector import DatabaseConnector as db
 from Modules.Pricing import Pricing as PR
 from datetime import date
 from Modules.UserAuthenticator.Tracker import Tracker
-
+from os import path
 """
 module provides lots of functionalities required by the users. I intend to put all the use cases for the
 usres as functions in this module. we would also create a excel file that specifies what type of user
@@ -208,13 +208,17 @@ def Pay(form):
     return response
 
 def getRate(user):
-    fd = open('../Pricing/rate.txt', 'r')
+    basepath = path.dirname(__file__)
+    filepath = path.abspath(path.join(basepath, "..", "Pricing", "rate.txt"))
+    fd = open(filepath, 'r')
     sqlFile = fd.read()
     fd.close()
     return {'rate': sqlFile};
 
 def setRate(user):
-    fd = open('../Pricing/rate.txt', 'w')
+    basepath = path.dirname(__file__)
+    filepath = path.abspath(path.join(basepath, "..", "Pricing", "rate.txt"))
+    fd = open(filepath, 'w')
     fd.write(str(user['rate']))
     fd.close()
     return {};
