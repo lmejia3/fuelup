@@ -6,7 +6,11 @@ transactions, trends, profit margin, and location.
 """
 
 def getQuote(form):
-    rate = 1.5
+    fd = open('rate.txt', 'r')
+    sqlFile = fd.read()
+    fd.close()
+
+    rate = int(1.5)
     hist = getUserHistoryFactor(form['id'])
     event = getEventFactor()
     loc = getLocationFactor(form['state'])

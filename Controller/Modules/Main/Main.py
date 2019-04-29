@@ -207,3 +207,14 @@ def Pay(form):
     result = db.runInsertQuery(q)
     return response
 
+def getRate(user):
+    fd = open('../Pricing/rate.txt', 'r')
+    sqlFile = fd.read()
+    fd.close()
+    return {'rate': sqlFile};
+
+def setRate(user):
+    fd = open('../Pricing/rate.txt', 'w')
+    fd.write(str(user['rate']))
+    fd.close()
+    return {};

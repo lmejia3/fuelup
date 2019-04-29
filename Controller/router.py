@@ -180,3 +180,27 @@ def getUsersOfType_route():
         response['error'] = content['error']
         return json.dumps(response)
     return json.dumps(response)
+
+@app.route('/function/getRate', methods=['POST', 'GET'])
+def getRate_route():
+    print("request @getRate arrived...")
+    content = request.get_json()
+    response = {}
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'getRate')):
+        response = Main.getRate(content)
+    if ('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response)
+    return json.dumps(response)
+
+@app.route('/function/setRate', methods=['POST', 'GET'])
+def SetRate_route():
+    print("request @getRate arrived...")
+    content = request.get_json()
+    response = {}
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'setRate')):
+        response = Main.setRate(content)
+    if ('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response)
+    return json.dumps(response)

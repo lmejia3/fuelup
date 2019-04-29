@@ -3,11 +3,19 @@
         <div class="my-user-sidebar col-1">
             <div class="my-div-marg"><a href="#!agent/profile" class="text-white">My Profile</a></div>
             <div class="my-div-marg"><a href="#!agent/requests" class="text-white">Requests</a></div>
-            <div class="my-div-marg"><a class="text-warning">Rates</a></div>
-            <div class="my-div-marg"><a href="#!agent/transactions" class="text-white">Transactions</a></div>
+            <div class="my-div-marg"><a class="text-warning" ng-show="type == 'manager'">Rates</a></div>
+            <div class="my-div-marg"><a href="#!agent/transactions" class="text-white"
+                    ng-show="type == 'manager'">Transactions</a></div>
         </div>
-        <div class="my-user-content col-11">
-            Rates
+        <div class="my-user-content col-11" ng-controller="rateCtrl as r">
+            <div class="col-2">
+                <label class="my-form-label">Rate:</label>
+            </div>
+            <input type="number" id="rate" class="form-control my-form-user" placeholder="Rate" name="gallons"
+                ng-model="info.rate">
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary my-form-submit"
+                        ng-click="r.setRate()" ng-hide="pc.order_state == 'done'">Set Rate</button></div>
         </div>
     </div>
 </div>

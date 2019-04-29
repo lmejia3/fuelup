@@ -10,8 +10,8 @@ mod.controller("loginCtrl", function ($scope, loginService) {
     var self = this;
     this.error = ""
     this.login = function (user, pass) {
-        user = 'username_01'
-        pass = 'password_01'
+        //user = 'username_01'
+        //pass = 'password_01'
         if (user == undefined) {
 
             return;
@@ -43,17 +43,18 @@ mod.controller("loginCtrl", function ($scope, loginService) {
                     lg.loggedIn = true;
                     $scope.loggedIn = true;
                     $scope.updateName();
-                    /*
+                    
                     switch(data.type){
                         case 'client':window.location = '#!user/history';
                         break;
                         case 'agent':
+                        window.location = '#!agent/requests';
                         break;
                         case 'manager':
+                        window.location = '#!agent/requests';
                         break;
                     }
-                    */
-                    window.location = '#!user/history';
+                
                 }
             },
             function (response) {
@@ -388,5 +389,58 @@ mod.controller('reportCtrl', function ($scope, requestService, loginService) {
     }
 
     this.getReport();
+
+});
+
+mod.controller('rateCtrl', function ($scope, requestService, loginService) {
+    var self = this;
+    var send = requestService.send;
+
+    this.getRate = function () {
+
+        var promise = send('getRate', {});
+
+        promise.then(
+            function (response) {
+                console.log('successful response');
+                console.log(response);
+                data = response.data;
+                if ('error' in data) {
+                    console.log(data.error)
+                } else {
+                    console.log('rate was recieved.');
+                    $scope.info.rate = data['rate'];
+                }
+            },
+            function (response) {
+                console.log('failed response');
+                console.log(response);
+            }
+        );
+    }
+
+    this.getRate();
+
+    this.setRate = function () {
+
+        var promise = send('setRate', {'rate': $scope.info.rate});
+
+        promise.then(
+            function (response) {
+                console.log('successful response');
+                console.log(response);
+                data = response.data;
+                if ('error' in data) {
+                    console.log(data.error)
+                } else {
+                    console.log('setrate response was recieved.');
+                }
+            },
+            function (response) {
+                console.log('failed response');
+                console.log(response);
+            }
+        );
+    }
 
 });

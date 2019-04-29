@@ -3,8 +3,8 @@
         <div class="my-user-sidebar col-1">
             <div class="my-div-marg"><a class="text-warning">My Profile</a></div>
             <div class="my-div-marg"><a href="#!agent/requests" class="text-white">Requests</a></div>
-            <div class="my-div-marg"><a href="#!agent/rates" class="text-white">Rates</a></div>
-            <div class="my-div-marg"><a class="text-warning">Transactions</a></div>
+            <div class="my-div-marg"><a href="#!agent/rates" class="text-white" ng-show="type == 'manager'">Rates</a></div>
+            <div class="my-div-marg"><a class="text-warning" ng-show="type == 'manager'">Transactions</a></div>
         </div>
         <div class="my-user-content col-11">
 

@@ -66,7 +66,7 @@
                         </div>
                         <div class="col-4">
                             <input type="date" id="date" class="form-control my-form-user" placeholder="date"
-                                name="date" ng-model="q_date">
+                                name="date" ng-model="q_date" min="{{Today() | date:'yyyy-MM-dd'}}">
                         </div>
                     </div>
                     <div class="form-group row">
