@@ -145,7 +145,7 @@ def getInvoices_route():
         return json.dumps(response)
 
 @app.route('/function/getQuotes', methods=['POST', 'GET'])
-def getInvoices_route():
+def getQuotes_route():
         print("request @getQuotes arrived...")
         content = request.get_json()
         response = {}
