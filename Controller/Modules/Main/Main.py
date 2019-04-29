@@ -148,15 +148,12 @@ def createInvoice(form):
         response['error'] = 'field missing'
         return response
 
-    q = 'INSERT INTO Invoice'
+    q = 'INSERT INTO Invoice (Paid, Username_ID, Quote_ID) SELECT 0, Quote.Username_ID, "%s" WHERE Quote.Quote_ID = "%s"' \
+        % (form['quote_id'], form['quote_id'])
 
+    result = db.runQuery(q)
     return response
-"""
-form = {'quote_id' : '1', 'username': 'us'}
-createInvoice(form)
-form = {'quote_id' : '1'}
-createInvoice(form)
-"""
+
 def getInvoices(user):
     response = {}
     if ('username' not in user):

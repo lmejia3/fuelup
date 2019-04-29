@@ -35,10 +35,20 @@ mod.controller("loginCtrl", function ($scope, loginService) {
                     lg.password = pass;
                     lg.key = data.key
                     lg.id = data.id
+                    lg.type = data.type;
                     lg.loggedIn = true;
                     $scope.loggedIn = true;
                     $scope.updateName();
-
+                    /*
+                    switch(data.type){
+                        case 'client':window.location = '#!user/history';
+                        break;
+                        case 'agent':
+                        break;
+                        case 'manager':
+                        break;
+                    }
+                    */
                     window.location = '#!user/history';
                 }
             },
@@ -155,6 +165,7 @@ mod.controller('profileCtrl', function ($scope, requestService, loginService) {
     this.quote_state = 'initial';
 
     this.getQuote = function (gallons, date, state) {
+        this.quote_state = 'initial';
         var promise = s('getQuote', { 'gallons': gallons, 'date': date, 'state': state });
 
         promise.then(
@@ -168,6 +179,28 @@ mod.controller('profileCtrl', function ($scope, requestService, loginService) {
                     console.log('quote was recieved.');
                     $scope.info.price = data;
                     self.quote_state = 'quote';
+                }
+            },
+            function (response) {
+                console.log('failed response');
+                console.log(response);
+            }
+        );
+    }
+    this.order_state = 'initial';
+    this.Order = function (id) {
+        var promise = s('createInvoice', {'quote_id':id});
+
+        promise.then(
+            function (response) {
+                console.log('successful response');
+                console.log(response);
+                data = response.data;
+                if ('error' in data) {
+                    console.log(data.error)
+                } else {
+                    console.log('invoice was created.');
+                    self.order_state = 'done';
                 }
             },
             function (response) {

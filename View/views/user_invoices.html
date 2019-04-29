@@ -20,12 +20,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="quote in model">
-                            <td>{{info.invoices.Number_of_Hallons}}</td>
-                            <td>{{info.invoices.Request_Delivery_Date}}</td>
-                            <td>{{info.invoices.Delivery_Date}}</td>
-                            <td>{{info.invoices.Price | currency:"$"}}</td>
-                            <td>{{info.invoices.Paid}}</td>
+                        <tr ng-repeat="item in info.invoices">
+                            <td>{{item.Number_of_Hallons}}</td>
+                            <td>{{item.Request_Delivery_Date}}</td>
+                            <td>{{item.Delivery_Date}}</td>
+                            <td>{{item.Price | currency:"$"}}</td>
+                            <td>{{item.Paid}}</td>
                         </tr>
                     </tbody>
                 </table>

@@ -88,8 +88,8 @@ def createInvoice_route():
         response = Main.createInvoice(content)
     if ('error' in content):
         response['error'] = content['error']
-        return json.dumps(response)
-    return json.dumps(response)
+        return json.dumps(response, default=str)
+    return json.dumps(response, default=str)
 
 @app.route('/function/getProfile', methods=['POST', 'GET'])
 def getProfile_route():
