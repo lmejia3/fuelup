@@ -109,30 +109,6 @@ def getProfile_route():
         return json.dumps(response)
     return json.dumps(response)
 
-@app.route('/function/setUser', methods=['POST', 'GET'])
-def setUser_route():
-    print("request @login arrived...")
-    content = request.get_json()
-    return 'connected to setUser'
-
-@app.route('/function/unregisterUser', methods=['POST', 'GET'])
-def unregisterUser_route():
-    print("request @login arrived...")
-    content = request.get_json()
-    return 'connected to unregisterUser'
-
-@app.route('/function/removeUser', methods=['POST', 'GET'])
-def removeUser_route():
-    print("request @login arrived...")
-    content = request.get_json()
-    return 'connected to removeUser'
-
-@app.route('/function/getTransactionHistory', methods=['POST', 'GET'])
-def getTransactionHistory_route():
-    print("request @login arrived...")
-    content = request.get_json()
-    return 'connected to getTransactionHistory'
-
 @app.route('/function/getAllTransactionHistory', methods=['POST', 'GET'])
 def getAllTransactionHistory_route():
     print("request @getAllTransactionHistory arrived...")
@@ -156,7 +132,6 @@ def Pay_route():
         response['error'] = content['error']
         return json.dumps(response, default=str)
     return json.dumps(response, default=str)
-
 
 @app.route('/function/getInvoices', methods=['POST', 'GET'])
 def getInvoices_route():
@@ -182,12 +157,6 @@ def getQuotes_route():
             return json.dumps(response, default=str)
         return json.dumps(response, default=str)
 
-@app.route('/function/getCurrentEvent', methods=['POST', 'GET'])
-def getCurrentEvent_route():
-    print("request @login arrived...")
-    content = request.get_json()
-    return 'connected to getCurrentEvent'
-
 @app.route('/function/getRequestList', methods=['POST', 'GET'])
 def getRequestList_route():
     print("request @getRequestList arrived...")
@@ -200,24 +169,6 @@ def getRequestList_route():
         return json.dumps(response, default=str)
     return json.dumps(response, default=str)
 
-@app.route('/function/getTrends', methods=['POST', 'GET'])
-def getTrends_route():
-    print("request @login arrived...")
-    content = request.get_json()
-    return 'connected to getTrends'
-
-@app.route('/function/getAllUsers', methods=['POST', 'GET'])
-def getAllUsers_route():
-    print("request @getAllUsers arrived...")
-    content = request.get_json()
-    response = {}
-    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'getAllUsers')):
-        response = Main.getAllUsers(content)
-    if ('error' in content):
-        response['error'] = content['error']
-        return json.dumps(response)
-    return json.dumps(response)
-
 @app.route('/function/getUsersOfType', methods=['POST', 'GET'])
 def getUsersOfType_route():
     print("request @getUsersOfType arrived...")
@@ -229,15 +180,3 @@ def getUsersOfType_route():
         response['error'] = content['error']
         return json.dumps(response)
     return json.dumps(response)
-
-@app.route('/function/getProfitMargin', methods=['POST', 'GET'])
-def getProfitMargin_route():
-    print("request @login arrived...")
-    content = request.get_json()
-    return 'connected to getProfitMargin'
-
-@app.route('/function/setProfitMargin', methods=['POST', 'GET'])
-def setProfitMargin_route():
-    print("request @login arrived...")
-    content = request.get_json()
-    return 'connected to setProfitMargin'

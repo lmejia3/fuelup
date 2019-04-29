@@ -151,32 +151,6 @@ def getInvoices(user):
     result = db.runQuery(q)
     return result
 
-def getAllUsers():
-    response = {}
-    q = 'SELECT * FROM Login_Info INNER JOIN Profile_for_Users ON Login_Info.Username_ID = Profile_for_Users.Username_ID'
-    result = db.runQuery(q)
-    dataobj = {}
-    for i in range(0, len(result)):
-        dataobj[i] = result[i]
-    response['invoices'] = dataobj;
-    return response
-
-def getUsersOfType(t):
-    response = {}
-    if (type(t) != type("str")):
-        print('type is not string.')
-        response['error'] = 'type is not string'
-        return response
-
-    q = 'SELECT * FROM Login_Info INNER JOIN Profile_for_Users ON Login_Info.Username_ID = Profile_for_Users.Username_ID WHERE Login_Info.Type_of_user = "%s"' \
-        % (t)
-    result = db.runQuery(q)
-    dataobj = {}
-    for i in range(0, len(result)):
-        dataobj[i] = result[i]
-    response['invoices'] = dataobj;
-    return response
-
 def getQuoteHistory(user):
     response = {}
     if ('username' not in user or 'id' not in user):
@@ -188,8 +162,6 @@ def getQuoteHistory(user):
         % (user['id'])
     result = db.runQuery(q)
     return result
-
-#print(getQuoteHistory({'username': '1', 'id':1}))
 
 def getCurrentEvent():
     return ""
@@ -204,30 +176,6 @@ def getRequestList(user):
     q = 'SELECT * FROM Quote, Invoice, Profile_for_Users WHERE Invoice.Username_ID = Profile_for_Users.Username_ID AND Invoice.Quote_ID = Quote.Quote_ID AND Invoice.Delivery_Date IS NULL'
     result = db.runQuery(q)
     return result
-
-print(getRequestList({'username': 0, 'id': 0}))
-
-def getTrends(bounds):
-    return ""
-
-def getProfitMargin(type):
-    return 0.0
-
-def setProfitMargin():
-    return False
-
-def setUser(user):
-
-    return False
-
-def unregisterUser(user):
-    return False
-
-def removeUser(user):
-    return False
-
-def getTransactionHistory(user, bounds):
-    return ""
 
 def getAllTransactionHistory(user):
     response = {}
@@ -251,5 +199,5 @@ def Pay(form):
     q = 'UPDATE Invoice Set Paid = 1 WHERE Invoice.Invoice_ID = %s' \
         % (form['invoice_id'])
     result = db.runInsertQuery(q)
-    return result
+    return response
 
