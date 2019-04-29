@@ -135,9 +135,15 @@ def getTransactionHistory_route():
 
 @app.route('/function/getAllTransactionHistory', methods=['POST', 'GET'])
 def getAllTransactionHistory_route():
-    print("request @login arrived...")
+    print("request @getAllTransactionHistory arrived...")
     content = request.get_json()
-    return 'connected to getAllTransactionHistory'
+    response = {}
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'getAllTransactionHistory')):
+        response = Main.getAllTransactionHistory(content)
+    if ('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response, default=str)
+    return json.dumps(response, default=str)
 
 
 @app.route('/function/getInvoices', methods=['POST', 'GET'])

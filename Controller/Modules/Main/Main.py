@@ -92,13 +92,13 @@ def getProfile(form):
 
 def processOrder(form):
     response = {}
-    if ('invoice_id' not in form or 'date' not in form or 'username' not in form):
+    if ('invoice_id' not in form or 'username' not in form):
         print('field missing')
         response['error'] = 'field missing'
         return response
 
-    db.runInsertQuery('INSERT INTO Quote (Username_ID, Number_of_Gallons, Price, Request_Date, Request_Delivery_Date) VALUES (%s, %s, %s, "%s", "%s")' \
-                     % (form['id'], form['gallons'], form['date']))
+    db.runInsertQuery('UPDATE Invoice SET Invoice.Delivery_Date = CURDATE() WHERE Invoice.Invoice_ID = %s'\
+                     % (form['invoice_id']))
     return response
 
 def getQuote(form):
@@ -230,4 +230,13 @@ def getTransactionHistory(user, bounds):
     return ""
 
 def getAllTransactionHistory(user):
+    response = {}
+    if ('username' not in user or 'id' not in user):
+        print('field missing')
+        response['error'] = 'field missing'
+        return response
+
+    q = 'SELECT * FROM Invoice, Profile_for_Users WHERE Invoice.Username_ID = Profile_for_Users.Username_ID'
+    result = db.runQuery(q)
+    return result
     return ""

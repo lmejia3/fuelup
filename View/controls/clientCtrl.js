@@ -301,9 +301,9 @@ mod.controller('requestCtrl', function ($scope, requestService) {
 
     this.getRequests();
 
-    this.Process = function (id, date) {
+    this.Process = function (id) {
 
-        var promise = send('processOrder', {'invoice_id':id,'date':date});
+        var promise = send('processOrder', {'invoice_id':id});
 
         promise.then(
             function (response) {
