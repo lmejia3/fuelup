@@ -10,7 +10,7 @@ def getQuote(form):
     basepath = path.dirname(__file__)
     filepath = path.abspath(path.join(basepath, "rate.txt"))
     fd = open(filepath, 'r')
-    sqlFile = fd.read()
+    sqlFile = fd.readline()
     fd.close()
 
     rate = float(fd)
