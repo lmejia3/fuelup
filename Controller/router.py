@@ -5,6 +5,7 @@ from Modules.Main import Main
 from Modules.UserAuthenticator.Tracker import Tracker
 from Modules.UserAuthenticator import UserAuthenticator as ua
 import json
+import datetime
 
 app = Flask(__name__)
 CORS(app)
@@ -132,6 +133,10 @@ def getAllTransactionHistory_route():
     content = request.get_json()
     return 'connected to getAllTransactionHistory'
 
+def myconverter(o):
+    if isinstance(o, datetime.datetime):
+        return o.__str__()
+
 @app.route('/function/getInvoices', methods=['POST', 'GET'])
 def getInvoices_route():
         print("request @getInvoices arrived...")
@@ -141,7 +146,7 @@ def getInvoices_route():
             response = Main.getInvoices(content)
         if ('error' in content):
             response['error'] = content['error']
-            return json.dumps(response, indent=4, sort_keys=True, default=str)
+            return json.dumps(response, default=myconverter)
         return json.dumps(response)
 
 @app.route('/function/getQuotes', methods=['POST', 'GET'])
@@ -153,7 +158,7 @@ def getQuotes_route():
             response = Main.getQuoteHistory(content)
         if ('error' in content):
             response['error'] = content['error']
-            return json.dumps(response, indent=4, sort_keys=True, default=str)
+            return json.dumps(response, default=myconverter)
         return json.dumps(response)
 
 @app.route('/function/getCurrentEvent', methods=['POST', 'GET'])
