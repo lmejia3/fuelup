@@ -315,6 +315,7 @@ mod.controller('requestCtrl', function ($scope, requestService) {
                 } else {
                     console.log('process response were recieved.');
                     $scope.info.requests = data;
+                    self.getRequests();
                 }
             },
             function (response) {
@@ -323,5 +324,36 @@ mod.controller('requestCtrl', function ($scope, requestService) {
             }
         );
     }
+
+});
+
+mod.controller('reportCtrl', function ($scope, requestService, loginService) {
+    var self = this;
+    var send = requestService.send;
+
+    this.getReport = function () {
+
+        var promise = send('getAllTransactionHistory', {});
+
+        promise.then(
+            function (response) {
+                console.log('successful response');
+                console.log(response);
+                data = response.data;
+                if ('error' in data) {
+                    console.log(data.error)
+                } else {
+                    console.log('report was recieved.');
+                    $scope.info.report = data;
+                }
+            },
+            function (response) {
+                console.log('failed response');
+                console.log(response);
+            }
+        );
+    }
+
+    this.getReport();
 
 });

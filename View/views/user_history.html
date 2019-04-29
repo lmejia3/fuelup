@@ -21,7 +21,7 @@
                         <tbody>
                             <tr ng-repeat="quote in info.quotes">
                                 <td>{{quote.Request_Date}}</td>
-                                <td>{{quote.Request_Delivery_Date}}</td>
+                                <td>{{quote.Request_Delivery_Date.substring(10,0)}}</td>
                                 <td>{{quote.Number_of_Gallons}}</td>
                                 <td>{{quote.Price | currency:"$"}}</td>
                             </tr>

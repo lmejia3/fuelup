@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3044892f-a975-4129-bf13-f56db87c1997" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Modules/Main/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Main/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../View/controls/clientCtrl.js" beforeDir="false" afterPath="$PROJECT_DIR$/../View/controls/clientCtrl.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,21 +39,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="24895" />
+          <entry key="py" value="24953" />
           <entry key="txt" value="416" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="416" />
-          <entry key="Python" value="24895" />
+          <entry key="Python" value="24953" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/router.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
@@ -66,20 +66,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Modules/Main/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="236" column="23" lean-forward="true" selection-start-line="236" selection-start-column="23" selection-end-line="236" selection-end-column="23" />
+            <state relative-caret-position="366">
+              <caret line="238" column="153" lean-forward="true" selection-start-line="238" selection-start-column="153" selection-end-line="238" selection-end-column="153" />
               <folding>
                 <element signature="e#0#61#0" expanded="true" />
-                <marker date="1556530308892" expanded="true" signature="1134:1139" ph="..." />
-                <marker date="1556530308892" expanded="true" signature="2436:2441" ph="..." />
-                <marker date="1556530308892" expanded="true" signature="3797:3802" ph="..." />
-                <marker date="1556530308892" expanded="true" signature="3840:4006" ph="..." />
-                <marker date="1556530308892" expanded="true" signature="4029:4034" ph="..." />
-                <marker date="1556530308892" expanded="true" signature="5326:5331" ph="..." />
-                <marker date="1556530308892" expanded="true" signature="7090:7441" ph="..." />
+                <marker date="1556531121420" expanded="true" signature="1134:1139" ph="..." />
+                <marker date="1556531121420" expanded="true" signature="2436:2441" ph="..." />
+                <marker date="1556531121420" expanded="true" signature="3797:3802" ph="..." />
+                <marker date="1556531121420" expanded="true" signature="3840:4006" ph="..." />
+                <marker date="1556531121420" expanded="true" signature="4029:4034" ph="..." />
+                <marker date="1556531121420" expanded="true" signature="5326:5331" ph="..." />
+                <marker date="1556531121420" expanded="true" signature="7090:7441" ph="..." />
               </folding>
             </state>
           </provider>
@@ -101,7 +101,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Modules/UserAuthenticator/UserAuthenticator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
+            <state relative-caret-position="207">
               <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -513,16 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/UserAuthenticator/UserAuthenticator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Modules/UserRegistrator/UserRegistrator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -534,23 +524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Modules/Main/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="236" column="23" lean-forward="true" selection-start-line="236" selection-start-column="23" selection-end-line="236" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-            <marker date="1556530308892" expanded="true" signature="1134:1139" ph="..." />
-            <marker date="1556530308892" expanded="true" signature="2436:2441" ph="..." />
-            <marker date="1556530308892" expanded="true" signature="3797:3802" ph="..." />
-            <marker date="1556530308892" expanded="true" signature="3840:4006" ph="..." />
-            <marker date="1556530308892" expanded="true" signature="4029:4034" ph="..." />
-            <marker date="1556530308892" expanded="true" signature="5326:5331" ph="..." />
-            <marker date="1556530308892" expanded="true" signature="7090:7441" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/router.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -558,6 +531,33 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
             <marker date="1556529969620" expanded="true" signature="1259:1264" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/UserAuthenticator/UserAuthenticator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="54" column="37" lean-forward="true" selection-start-line="54" selection-start-column="37" selection-end-line="54" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modules/Main/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="238" column="153" lean-forward="true" selection-start-line="238" selection-start-column="153" selection-end-line="238" selection-end-column="153" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+            <marker date="1556531121420" expanded="true" signature="1134:1139" ph="..." />
+            <marker date="1556531121420" expanded="true" signature="2436:2441" ph="..." />
+            <marker date="1556531121420" expanded="true" signature="3797:3802" ph="..." />
+            <marker date="1556531121420" expanded="true" signature="3840:4006" ph="..." />
+            <marker date="1556531121420" expanded="true" signature="4029:4034" ph="..." />
+            <marker date="1556531121420" expanded="true" signature="5326:5331" ph="..." />
+            <marker date="1556531121420" expanded="true" signature="7090:7441" ph="..." />
           </folding>
         </state>
       </provider>

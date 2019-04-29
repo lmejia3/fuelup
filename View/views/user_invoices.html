@@ -21,9 +21,9 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="item in info.invoices">
-                            <td>{{item.Number_of_Hallons}}</td>
-                            <td>{{item.Request_Delivery_Date}}</td>
-                            <td>{{item.Delivery_Date}}</td>
+                            <td>{{item.Number_of_Gallons}}</td>
+                            <td>{{item.Request_Delivery_Date.substring(10,0)}}</td>
+                            <td>{{item.Delivery_Date.substring(10,0)}}</td>
                             <td>{{item.Price | currency:"$"}}</td>
                             <td>{{item.Paid}}</td>
                         </tr>

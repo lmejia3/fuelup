@@ -236,7 +236,7 @@ def getAllTransactionHistory(user):
         response['error'] = 'field missing'
         return response
 
-    q = 'SELECT * FROM Invoice, Profile_for_Users WHERE Invoice.Username_ID = Profile_for_Users.Username_ID'
+    q = 'SELECT * FROM Invoice, Profile_for_Users, Quote WHERE Invoice.Username_ID = Profile_for_Users.Username_ID AND Invoice.Quote_ID = Quote.Quote_ID'
     result = db.runQuery(q)
     return result
     return ""
