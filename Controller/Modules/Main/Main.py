@@ -146,7 +146,7 @@ def createInvoice(form):
         response['error'] = 'field missing'
         return response
 
-    q = 'INSERT INTO Invoice (Paid, Username_ID, Quote_ID) SELECT 0, Quote.Username_ID, "%s" WHERE Quote.Quote_ID = "%s"' \
+    q = 'INSERT INTO Invoice (Paid, Username_ID, Quote_ID) SELECT 0, Quote.Username_ID, "%s" WHERE Quote.Quote_ID = %s' \
         % (form['quote_id'], form['quote_id'])
 
     result = db.runQuery(q)
