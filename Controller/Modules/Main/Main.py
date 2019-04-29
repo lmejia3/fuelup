@@ -138,15 +138,7 @@ def getQuote(form):
                      % (form['id'], form['gallons'], price, today, form['date']))
 
     return response
-"""
-form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_43', \
-        'gallons': '300', 'date': '2019-01-01'}
-getQuote(form)
 
-form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', \
-        'gallons': '300', 'date': '2019-01-01'}
-getQuote(form)
-"""
 def createInvoice(form):
     response = {}
     if ('quote_id' not in form or 'username' not in form):
@@ -170,22 +162,11 @@ def getInvoices(user):
         response['error'] = 'field missing'
         return response
 
-    q = 'SELECT * FROM Invoice LEFT JOIN Login_Info ON Invoice.Username_ID = Login_Info.Username_ID WHERE Login_Info.Username = "%s"' \
-        % (user['username'])
+    q = 'SELECT * FROM Invoice WHERE Username_ID = "%s"' \
+        % (user['id'])
     result = db.runQuery(q)
-    dataobj = {}
-    for i in range(0, len(result)):
-        dataobj[i] = result[i]
-    response['invoices'] = dataobj;
-    return response
-"""
-form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', 'username': 'username_43', \
-        'gallons': '300', 'date': '2019-01-01'}
-getInvoices(form)
-form = {'firstname': 'ftest_001', 'lastname': 'ltest_001', 'company': 'ctest_001', 'address1': 'address1', 'address2': 'address2', 'city': 'katy', 'state': 'GG', 'zipcode': '12345', \
-        'gallons': '300', 'date': '2019-01-01'}
-getInvoices(form)
-"""
+    return result
+
 def getAllUsers():
     response = {}
     q = 'SELECT * FROM Login_Info INNER JOIN Profile_for_Users ON Login_Info.Username_ID = Profile_for_Users.Username_ID'

@@ -138,7 +138,7 @@ def getInvoices_route():
         content = request.get_json()
         response = {}
         if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'getInvoices')):
-            response = Main.modifyProfile(content)
+            response = Main.getInvoices(content)
         if ('error' in content):
             response['error'] = content['error']
             return json.dumps(response)

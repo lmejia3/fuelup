@@ -160,7 +160,7 @@ mod.controller('profileCtrl', function ($scope, requestService, loginService) {
     this.quote_state = 'initial';
 
     this.getQuote = function (gallons, date, state) {
-        var promise = s('getQuote', { 'gallons': gallons, 'date': date, 'state': state});
+        var promise = s('getQuote', { 'gallons': gallons, 'date': date, 'state': state });
 
         promise.then(
             function (response) {
@@ -184,3 +184,33 @@ mod.controller('profileCtrl', function ($scope, requestService, loginService) {
 
 });
 
+mod.controller('invoiceCtrl', function ($scope, requestService, loginService) {
+    var self = this;
+    var send = requestService.send;
+
+    this.getInvoices = function () {
+
+        var promise = send('getInvoices', {});
+
+        promise.then(
+            function (response) {
+                console.log('successful response');
+                console.log(response);
+                data = response.data;
+                if ('error' in data) {
+                    console.log(data.error)
+                } else {
+                    console.log('invoices were recieved.');
+                    $scope.info.invoices = data;
+                }
+            },
+            function (response) {
+                console.log('failed response');
+                console.log(response);
+            }
+        );
+    }
+
+    this.getInvoices();
+
+});
