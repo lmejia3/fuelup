@@ -8,7 +8,7 @@
         </div>
         <div class="my-user-content col-11">
             <div class="container" style="margin: 0px;" ng-controller="clientCtrl">
-                    <h2 class="text-black" style="padding-left: 12px">Request Quote</h2>
+                    <h2 class="text-black" style="padding-left: 12px">Quote History</h2>
                     <table class="table">
                         <thead>
                             <tr>
@@ -16,16 +16,14 @@
                                 <th>Delivery Date</th>
                                 <th>Amount In Gallons</th>
                                 <th>Price</th>
-                                <th>Processed</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr ng-repeat="quote in model">
-                                <td>{{quote.rdate}}</td>
-                                <td>{{quote.ddate}}</td>
-                                <td>{{quote.gallons}}</td>
-                                <td>{{quote.price | currency:"$"}}</td>
-                                <td>{{quote.paid}}</td>
+                                <td>{{info.quotes.Request_Date}}</td>
+                                <td>{{info.quotes.Request_Delivery_Date}}</td>
+                                <td>{{info.quotes.Number_of_Gallons}}</td>
+                                <td>{{info.quotes.Price | currency:"$"}}</td>
                             </tr>
                         </tbody>
                     </table>

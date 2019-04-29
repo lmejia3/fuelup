@@ -214,3 +214,34 @@ mod.controller('invoiceCtrl', function ($scope, requestService, loginService) {
     this.getInvoices();
 
 });
+
+mod.controller('historyCtrl', function ($scope, requestService, loginService) {
+    var self = this;
+    var send = requestService.send;
+
+    this.getInvoices = function () {
+
+        var promise = send('getQuotes', {});
+
+        promise.then(
+            function (response) {
+                console.log('successful response');
+                console.log(response);
+                data = response.data;
+                if ('error' in data) {
+                    console.log(data.error)
+                } else {
+                    console.log('quotes were recieved.');
+                    $scope.info.quotes = data;
+                }
+            },
+            function (response) {
+                console.log('failed response');
+                console.log(response);
+            }
+        );
+    }
+
+    this.getInvoices();
+
+});

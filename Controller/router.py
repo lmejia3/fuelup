@@ -144,6 +144,18 @@ def getInvoices_route():
             return json.dumps(response)
         return json.dumps(response)
 
+@app.route('/function/getQuotes', methods=['POST', 'GET'])
+def getInvoices_route():
+        print("request @getQuotes arrived...")
+        content = request.get_json()
+        response = {}
+        if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'getQuoteHistory')):
+            response = Main.getQuoteHistory(content)
+        if ('error' in content):
+            response['error'] = content['error']
+            return json.dumps(response)
+        return json.dumps(response)
+
 @app.route('/function/getCurrentEvent', methods=['POST', 'GET'])
 def getCurrentEvent_route():
     print("request @login arrived...")

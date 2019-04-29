@@ -162,12 +162,10 @@ def getInvoices(user):
         response['error'] = 'field missing'
         return response
 
-    q = 'SELECT Number_of_Gallons, Price, Request_Delivery_Date, Delivery_Date FROM Invoice, Quote WHERE Invoice.Username_ID = "%s" AND Invoice.Username_ID = Quote.Username_ID' \
+    q = 'SELECT Number_of_Gallons, Price, Request_Delivery_Date, Delivery_Date, Paid FROM Invoice, Quote WHERE Invoice.Username_ID = "%s" AND Invoice.Username_ID = Quote.Username_ID' \
         % (user['id'])
     result = db.runQuery(q)
     return result
-
-#print(getInvoices({'username': 'a','id':1}))
 
 def getAllUsers():
     response = {}
@@ -197,10 +195,17 @@ def getUsersOfType(t):
     response['invoices'] = dataobj;
     return response
 
-"""
-getUsersOfType('agent')
-getUsersOfType(1)
-"""
+def getQuoteHistory(user):
+    response = {}
+    if ('username' not in user or 'id' not in user):
+        print('field missing')
+        response['error'] = 'field missing'
+        return response
+
+    q = 'SELECT * FROM Quote WHERE Username_ID = "%s"' \
+        % (user['id'])
+    result = db.runQuery(q)
+    return result
 
 def getCurrentEvent():
     return ""

@@ -21,11 +21,11 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="quote in model">
-                            <td>{{quote.rdate}}</td>
-                            <td>{{quote.ddate}}</td>
-                            <td>{{quote.gallons}}</td>
-                            <td>{{quote.price | currency:"$"}}</td>
-                            <td>{{quote.paid}}</td>
+                            <td>{{info.invoices.Number_of_Hallons}}</td>
+                            <td>{{info.invoices.Request_Delivery_Date}}</td>
+                            <td>{{info.invoices.Delivery_Date}}</td>
+                            <td>{{info.invoices.Price | currency:"$"}}</td>
+                            <td>{{info.invoices.Paid}}</td>
                         </tr>
                     </tbody>
                 </table>
