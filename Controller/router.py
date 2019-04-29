@@ -146,7 +146,7 @@ def getAllTransactionHistory_route():
     return json.dumps(response, default=str)
 
 @app.route('/function/Pay', methods=['POST', 'GET'])
-def getAllTransactionHistory_route():
+def Pay_route():
     print("request @Pay arrived...")
     content = request.get_json()
     response = {}
