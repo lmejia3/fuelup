@@ -9,11 +9,11 @@ transactions, trends, profit margin, and location.
 def getQuote(form):
     basepath = path.dirname(__file__)
     filepath = path.abspath(path.join(basepath, "rate.txt"))
-    fd = open(filepath, 'w')
+    fd = open(filepath, 'r')
     sqlFile = fd.read()
     fd.close()
 
-    rate = float(1.5)
+    rate = float(fd)
     hist = getUserHistoryFactor(form['id'])
     event = getEventFactor()
     loc = getLocationFactor(form['state'])
