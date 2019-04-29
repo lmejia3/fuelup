@@ -6,29 +6,29 @@
             <div class="my-div-marg"><a class="text-warning">Transactions</a></div>
         </div>
         <div class="my-user-content col-11">
-                <div class="container" style="margin: 0px;" ng-controller="reportCtrl as rc">
-                        <h2 class="text-black" style="padding-left: 12px">Transactions</h2>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Invoice ID</th>
-                                    <th>Client Company</th>
-                                    <th>Request Delivery Date</th>
-                                    <th>Price</th>
-                                    <th>Amount Paid</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="item in info.report">
-                                    <td>{{item.Invoice_ID}}</td>
-                                    <td>{{item.Company_Name}}</td>
-                                    <td>{{item.Request_Delivery_Date.substring(10,0)}}</td>
-                                    <td>{{item.Price}}</td>
-                                    <td>{{(item.Paid == 0) ? 0 : item.Price}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="container" style="margin: 0px;" ng-controller="reportCtrl as rc">
+                <h2 class="text-black" style="padding-left: 12px">Transactions</h2>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Invoice ID</th>
+                            <th>Client Company</th>
+                            <th>Request Delivery Date</th>
+                            <th>Price</th>
+                            <th>Amount Paid</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in info.report">
+                            <td>{{item.Invoice_ID}}</td>
+                            <td>{{item.Company_Name}}</td>
+                            <td>{{item.Request_Delivery_Date.substring(10,0)}}</td>
+                            <td>{{item.Price | currency:"$"}}</td>
+                            <td>{{((item.Paid == 0) ? 0 : item.Price) | currency:"$"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

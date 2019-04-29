@@ -7,13 +7,14 @@
             </div>
         </div>
         <div class="form-group row justify-content-center">
-            <div class="col-9 ">
+            <div class="col-9">
                 <input type="password" id="pass" class="form-control" placeholder="password" name="pass" ng-model="pass" autocomplete="current-password">
             </div>
         </div>
         <div class="form-group row justify-content-center">
             <div class="form-group row justify-content-center">
                 <button type="button" class="btn btn-primary col-6" ng-click="lg.login(user, pass)">Log in</button>
+                <button class="btn col-12" style="color: red" ng-show="lg.error == 'wrong'">Wrong Username or Password</button>
                 <button type="button" class="btn btn-link col-12" onclick="window.location.href= '#!getpass';">Forgot
                     Password?</button>
                 <button type="button" class="btn btn-link col-12" onclick="window.location.href= '#!register';">Sign

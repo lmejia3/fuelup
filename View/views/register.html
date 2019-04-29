@@ -21,6 +21,7 @@
         <div class="form-group row justify-content-center">
             <div class="form-group row justify-content-center">
                 <button type="submit" class="btn btn-primary col-6" ng-click="rs.register(user, pass, conf)">Sign Up</button>
+                <button class="btn col-12" style="color: red" ng-show="rs.error == 'wrong'">{{rs.msg}}</button>
                 <button type="button" class="btn btn-link col-12" onclick="window.location.href= '#!login';">Already
                     Registered?</button>
             </div>

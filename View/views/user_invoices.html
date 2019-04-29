@@ -9,8 +9,8 @@
         <div class="my-user-content col-11" ng-controller="invoiceCtrl as ic">
             <div class="container" style="margin: 0px;" ng-controller="clientCtrl">
                 <h2 class="text-black" style="padding-left: 12px">Invoices</h2>
-                <table class="table">
-                    <thead>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
                         <tr>
                             <th>Amount In Gallons</th>
                             <th>Requested Date</th>
@@ -27,7 +27,7 @@
                             <td>{{item.Price | currency:"$"}}</td>
                             <td ng-show="item.Paid == 1">Paid!</td>
                             <td ng-show="item.Paid == 0">
-                                    <button type="submit" class="btn btn-primary my-form-submit"
+                                <button type="submit" class="btn btn-primary my-form-submit"
                                     ng-click="ic.Pay(item.Invoice_ID)">Pay Now</button>
                             </td>
                         </tr>

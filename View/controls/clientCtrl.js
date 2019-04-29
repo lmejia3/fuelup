@@ -7,6 +7,8 @@ angular.module("yoFeul")
 var mod = angular.module("yoFeul")
 
 mod.controller("loginCtrl", function ($scope, loginService) {
+    var self = this;
+    this.error = ""
     this.login = function (user, pass) {
         user = 'username_01'
         pass = 'password_01'
@@ -29,6 +31,8 @@ mod.controller("loginCtrl", function ($scope, loginService) {
                 data = response.data;
                 if ('error' in data) {
                     console.log(data.error)
+                    self.error = 'wrong';
+
                 } else {
                     lg.username = user;
                     console.log("IM HERE: " + lg.username);
@@ -53,6 +57,7 @@ mod.controller("loginCtrl", function ($scope, loginService) {
                 }
             },
             function (response) {
+                self.error = 'wrong';
                 console.log('failed responce');
                 console.log(response);
             }
@@ -62,6 +67,9 @@ mod.controller("loginCtrl", function ($scope, loginService) {
 });
 
 mod.controller('registerCtrl', function ($scope, registerService) {
+    var self = this;
+    this.error = "";
+    this.msg = "";
     this.register = function (user, pass, conf) {
         if (user == undefined) {
             return;
@@ -83,6 +91,8 @@ mod.controller('registerCtrl', function ($scope, registerService) {
                 data = response.data;
                 if ('error' in data) {
                     console.log(data.error)
+                    this.error = 'wrong'
+                    this.msg = data.error
                 } else {
                     console.log('registered');
                     window.location = '#!login';
