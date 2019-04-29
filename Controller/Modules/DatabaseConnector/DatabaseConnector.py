@@ -11,7 +11,12 @@ db = getDatabaseObject()
 def runQuery(query):
     db.query(query)
     result = db.store_result()
-    result = result.fetch_row(0, how=1)
+    result = result.fetch_row(0, how = 1)
+    return result
+
+def run(query):
+    db.query(query)
+    result = db.store_result()
     return result
 
 def runInsertQuery(query):

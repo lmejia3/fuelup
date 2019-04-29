@@ -103,7 +103,8 @@
                     </div>
                     <div class="col-6">
                         <button type="submit" class="btn btn-primary my-form-submit"
-                            ng-click="pc.Order(info.price.Quote_ID)">Order Feul</button></div>
+                            ng-click="pc.Order(info.price.Quote_ID)" ng-hide="pc.order_state == 'done'">Order Feul</button></div>
+                            <div ng-show="pc.order_state == 'done'">Order Was Placed. Invoice Was Created.</div>
                 </div>
             </div>
 

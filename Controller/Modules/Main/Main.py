@@ -136,9 +136,9 @@ def getQuote(form):
     response['profit'] = form['profit']
     response['rate'] = form['rate']
 
-    q = 'INSERT INTO Quote (Username_ID, Number_of_Gallons, Price, Request_Date, Request_Delivery_Date) VALUES (%s, %s, %s, "%s", "%s"); SELECT LAST_INSERT_ID();' \
-                     % (form['id'], form['gallons'], price, today, form['date'])
-    response['quote_id'] = db.runQuery(q);
+    response['quote_id'] = db.run('INSERT INTO Quote (Username_ID, Number_of_Gallons, Price, Request_Date, Request_Delivery_Date) VALUES (%s, %s, %s, "%s", "%s"); SELECT LAST_INSERT_ID()' \
+                     % (form['id'], form['gallons'], price, today, form['date']))
+
     return response
 
 def createInvoice(form):
