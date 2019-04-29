@@ -61,6 +61,7 @@ def registerUser(user):
     return response
 
 def modifyProfile(form):
+    print(form)
     response = {}
     if('username' not in form or 'lastname' not in form, 'company' not in form, 'address1' not in form,\
        'city' not in form, 'state' not in form, 'zipcode' not in form, 'firstname' not in form):
