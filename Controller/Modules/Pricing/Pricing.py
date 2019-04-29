@@ -1,16 +1,19 @@
 from datetime import date
 from Modules.DatabaseConnector import DatabaseConnector as db
+from os import path
 """
 module responsible for deciding the pricing for different usres. It puts into account the history of
 transactions, trends, profit margin, and location.
 """
 
 def getQuote(form):
-    fd = open('rate.txt', 'r')
+    basepath = path.dirname(__file__)
+    filepath = path.abspath(path.join(basepath, "rate.txt"))
+    fd = open(filepath, 'w')
     sqlFile = fd.read()
     fd.close()
 
-    rate = int(1.5)
+    rate = float(1.5)
     hist = getUserHistoryFactor(form['id'])
     event = getEventFactor()
     loc = getLocationFactor(form['state'])
