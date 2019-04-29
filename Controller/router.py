@@ -145,6 +145,18 @@ def getAllTransactionHistory_route():
         return json.dumps(response, default=str)
     return json.dumps(response, default=str)
 
+@app.route('/function/Pay', methods=['POST', 'GET'])
+def getAllTransactionHistory_route():
+    print("request @Pay arrived...")
+    content = request.get_json()
+    response = {}
+    if (vc.validateRequest(content) and ua.userIsAuthorized(content, 'Pay')):
+        response = Main.Pay(content)
+    if ('error' in content):
+        response['error'] = content['error']
+        return json.dumps(response, default=str)
+    return json.dumps(response, default=str)
+
 
 @app.route('/function/getInvoices', methods=['POST', 'GET'])
 def getInvoices_route():

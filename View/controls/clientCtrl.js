@@ -239,6 +239,29 @@ mod.controller('invoiceCtrl', function ($scope, requestService, loginService) {
 
     this.getInvoices();
 
+    this.Pay = function (id) {
+        var promise = send('Pay', {'invoice_id': id});
+
+        promise.then(
+            function (response) {
+                console.log('successful response');
+                console.log(response);
+                data = response.data;
+                if ('error' in data) {
+                    console.log(data.error)
+                } else {
+                    console.log('pay response recieved.');
+                    $scope.info.kappa = data;
+                    self.getInvoices();
+                }
+            },
+            function (response) {
+                console.log('failed response');
+                console.log(response);
+            }
+        );
+    }
+
 });
 
 mod.controller('historyCtrl', function ($scope, requestService, loginService) {
@@ -303,7 +326,7 @@ mod.controller('requestCtrl', function ($scope, requestService) {
 
     this.Process = function (id) {
 
-        var promise = send('processOrder', {'invoice_id':id});
+        var promise = send('processOrder', { 'invoice_id': id });
 
         promise.then(
             function (response) {

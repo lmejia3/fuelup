@@ -16,7 +16,7 @@
                             <th>Requested Date</th>
                             <th>Delivery Date</th>
                             <th>Price</th>
-                            <th>Payed</th>
+                            <th>Paid</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -25,7 +25,11 @@
                             <td>{{item.Request_Delivery_Date.substring(10,0)}}</td>
                             <td>{{item.Delivery_Date.substring(10,0)}}</td>
                             <td>{{item.Price | currency:"$"}}</td>
-                            <td>{{item.Paid}}</td>
+                            <td ng-show="item.Paid == 1">Paid!</td>
+                            <td ng-show="item.Paid == 0">
+                                    <button type="submit" class="btn btn-primary my-form-submit"
+                                    ng-click="ic.Pay(item.Invoice_ID)">Pay Now</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

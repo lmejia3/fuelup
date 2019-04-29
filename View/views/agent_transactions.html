@@ -14,16 +14,17 @@
                                     <th>Invoice ID</th>
                                     <th>Client Company</th>
                                     <th>Request Delivery Date</th>
+                                    <th>Price</th>
                                     <th>Amount Paid</th>
-                                    <th>Deliver</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="item in info.requests">
+                                <tr ng-repeat="item in info.report">
                                     <td>{{item.Invoice_ID}}</td>
                                     <td>{{item.Company_Name}}</td>
                                     <td>{{item.Request_Delivery_Date.substring(10,0)}}</td>
-                                    <td>{{item.Number_of_Gallons}}</td>
+                                    <td>{{item.Price}}</td>
+                                    <td>{{(item.Paid == 0) ? 0 : item.Number_of_Gallons}}</td>
                                 </tr>
                             </tbody>
                         </table>

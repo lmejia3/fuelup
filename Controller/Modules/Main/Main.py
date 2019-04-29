@@ -240,3 +240,16 @@ def getAllTransactionHistory(user):
     result = db.runQuery(q)
     return result
     return ""
+
+def Pay(form):
+    response = {}
+    if ('username' not in form or 'invoice_id' not in form):
+        print('field missing')
+        response['error'] = 'field missing'
+        return response
+
+    q = 'UPDATE Invoice Set Paid = 1 WHERE Invoice.Invoice_ID = %s' \
+        % (form['invoice_id'])
+    result = db.runInsertQuery(q)
+    return result
+
